@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Explore Events | HALSEA - Land of Kings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+
+        .event-card-hover:hover .event-image {
+            transform: scale(1.05);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F6F2ED;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dec1af;
+            border-radius: 4px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#006b54",
+                        "tertiary-fixed-dim": "#e5b9dc",
+                        "on-tertiary-container": "#492a45",
+                        "on-surface-variant": "#574235",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#f57c00",
+                        "on-background": "#1c1c19",
+                        "surface-dim": "#ddd9d5",
+                        "surface-container-low": "#f7f3ee",
+                        "tertiary-fixed": "#ffd7f6",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f1ede8",
+                        "on-secondary-container": "#007259",
+                        "surface-container-highest": "#e6e2dd",
+                        "surface": "#fdf9f4",
+                        "on-primary-container": "#572800",
+                        "secondary-container": "#81f8d1",
+                        "outline-variant": "#dec1af",
+                        "surface-container-high": "#ebe8e3",
+                        "primary-fixed-dim": "#ffb786",
+                        "on-surface": "#1c1c19",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#723600",
+                        "surface-tint": "#964900",
+                        "on-tertiary-fixed": "#2d112b",
+                        "on-primary-fixed": "#311300",
+                        "primary-fixed": "#ffdcc6",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#81f8d1",
+                        "primary": "#964900",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#5d3c58",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#002117",
+                        "secondary-fixed-dim": "#63dbb6",
+                        "inverse-surface": "#31302d",
+                        "inverse-on-surface": "#f4f0eb",
+                        "outline": "#8b7263",
+                        "surface-bright": "#fdf9f4",
+                        "on-secondary-fixed-variant": "#00513e",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#b991b2",
+                        "background": "#fdf9f4",
+                        "tertiary": "#765371",
+                        "surface-variant": "#e6e2dd",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#ffb786"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold tracking-tighter text-primary">HALSEA</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Destinations</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md" href="#">Events</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Accommodations</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Culinary</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex items-center text-on-surface-variant hover:text-primary font-label-md px-4 py-2 rounded-xl transition-all">Sign In</button>
+<button class="bg-primary-container text-on-primary-container font-label-md px-6 py-2.5 rounded-xl hover:shadow-lg active:scale-95 transition-all">Register</button>
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Breadcrumb & Header -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-8">
+<nav class="flex items-center gap-2 text-on-surface-variant font-label-sm mb-6">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Events</span>
+</nav>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div class="max-w-2xl">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-4">Festivals &amp; Traditions</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Experience the soul of Halmahera Selatan through vibrant cultural celebrations, traditional boat races, and culinary festivals.</p>
+</div>
+</div>
+</section>
+<!-- Filters Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16">
+<div class="bg-surface-container-low p-6 rounded-2xl flex flex-wrap gap-4 items-end border border-outline-variant/30">
+<div class="flex-1 min-w-[240px]">
+<label class="block font-label-md text-on-surface-variant mb-2">Search Events</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-3 bg-surface rounded-xl border-outline-variant/50 focus:border-primary-container focus:ring-0 transition-all font-body-md" placeholder="Festival name or keyword..." type="text"/>
+</div>
+</div>
+<div class="w-full md:w-auto min-w-[160px]">
+<label class="block font-label-md text-on-surface-variant mb-2">Month</label>
+<select class="w-full px-4 py-3 bg-surface rounded-xl border-outline-variant/50 focus:border-primary-container focus:ring-0 font-body-md appearance-none">
+<option>All Months</option>
+<option>July 2024</option>
+<option>August 2024</option>
+</select>
+</div>
+<div class="w-full md:w-auto min-w-[160px]">
+<label class="block font-label-md text-on-surface-variant mb-2">Category</label>
+<select class="w-full px-4 py-3 bg-surface rounded-xl border-outline-variant/50 focus:border-primary-container focus:ring-0 font-body-md appearance-none">
+<option>All Categories</option>
+<option>Cultural</option>
+<option>Sports</option>
+<option>Food</option>
+</select>
+</div>
+<div class="w-full md:w-auto min-w-[160px]">
+<label class="block font-label-md text-on-surface-variant mb-2">Location</label>
+<select class="w-full px-4 py-3 bg-surface rounded-xl border-outline-variant/50 focus:border-primary-container focus:ring-0 font-body-md appearance-none">
+<option>All Islands</option>
+<option>Labuha</option>
+<option>Bacan</option>
+</select>
+</div>
+<button class="bg-secondary text-on-secondary px-8 py-3 rounded-xl font-label-md hover:bg-secondary/90 transition-all flex items-center gap-2 shrink-0">
+<span class="material-symbols-outlined">filter_list</span> Apply Filters
+                </button>
+</div>
+</section>
+<!-- Featured Event -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-8">Happening Soon</h2>
+<div class="relative group overflow-hidden rounded-3xl bg-surface-container shadow-lg border border-outline-variant/20 flex flex-col lg:flex-row h-auto lg:h-[480px]">
+<div class="lg:w-3/5 relative overflow-hidden h-64 lg:h-full">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A panoramic shot of a traditional Cakalang boat race in Halmahera Selatan. Vibrant wooden boats with colorful sails carve through crystal clear turquoise waters. The background features lush tropical islands under a bright golden hour sun. High-end travel photography style with rich orange and deep emerald tones, reflecting a premium corporate travel aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB6II70srmDuoySIOeoS-Uv374ZAdusAcd3uv3Q_fyGOUgZDAo0oPQDIZWUMNCNgHrRTPG3f-l8mN2Gr-AW5GN224TBPGdjtoXsW8mvC3Xao_4Y_72FWs5p-MeXPiyBQbuPc_IWlP2g0RqXhx1Ddch_68UeatnRWe3zI4i3mM415g52XJmcu2AxTJU0belE4MlG_5z17hpyQtwTVlmfV-hTpRIBY1Vwct9U6IX-9G9uFLxmWKK7Wqw3kniqIcoQmF9jCx-8KDsbd8U')"></div>
+<div class="absolute top-6 left-6 bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-md shadow-md">Featured</div>
+</div>
+<div class="lg:w-2/5 p-8 md:p-12 flex flex-col justify-center">
+<div class="flex items-center gap-4 text-primary font-label-md mb-4">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">calendar_month</span> Aug 15-20, 2024</span>
+<span class="w-1 h-1 bg-outline-variant rounded-full"></span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[18px]">location_on</span> Labuha Waterfront</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-4">Festival Budaya Bacan</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">The grandest annual celebration showcasing the majestic traditions of the Bacan Sultanate. Witness the legendary Cakalang boat parade, sacred ritual dances, and an island-wide culinary fair featuring royal recipes passed down through generations.</p>
+<div class="mt-auto flex items-center gap-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md hover:shadow-xl transition-all">Register Event</button>
+<button class="border border-outline px-8 py-4 rounded-xl font-label-md hover:bg-surface-container transition-all">Learn More</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Event Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24">
+<div class="flex items-center justify-between mb-10">
+<h2 class="font-headline-md text-headline-md text-on-surface">Upcoming Events</h2>
+<span class="text-on-surface-variant font-label-md">9 results found</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Event Card Template (Repeated 9 times with unique data) -->
+<script>
+                    const eventData = [
+                        { title: "Widi International Fishing", date: "Sep 05, 2024", location: "Widi Islands", category: "Sports", img: "High-action sport fishing scene in the Widi Islands of Halmahera. A professional angler battles a large fish on a luxury boat deck, surrounded by endless blue sea. The lighting is vivid and clear, highlighting the emerald waters and white boat splash. Minimalist high-end travel aesthetic." },
+                        { title: "Batu Bacan Expo 2024", date: "Sep 12, 2024", location: "Labuha Center", category: "Exhibition", img: "A sophisticated exhibition space displaying rare green Chrysocolla-in-Chalcedony (Batu Bacan) gemstones. Professional museum lighting focuses on polished jewelry pieces on velvet stands. Minimalist, luxury interior with white and wood textures. Soft ambient lighting." },
+                        { title: "Guraici Snorkel Day", date: "Sep 18, 2024", location: "Guraici Islands", category: "Nature", img: "An underwater shot of vibrant coral reefs and schools of tropical fish in the Guraici Islands. Sunlight pierces the water surface in golden rays. The aesthetic is serene and pristine, with a focus on deep sea navy and emerald hues." },
+                        { title: "Sultanate Food Festival", date: "Oct 02, 2024", location: "Bacan Palace", category: "Culinary", img: "A long traditional wooden table laden with authentic Maluku dishes like Papeda, grilled fish, and spicy sambal. Set in an open-air palace courtyard with tropical greenery. Warm evening lighting with lanterns, professional food photography style." },
+                        { title: "Halmahera Surf Cup", date: "Oct 10, 2024", location: "Morotai Coast", category: "Sports", img: "A surfer catching a perfect barrel wave along a palm-fringed coast. The water is a deep turquoise, and the spray is illuminated by bright afternoon sun. Energetic, high-contrast visual style with a premium beach vibe." },
+                        { title: "Tari Cakalele Performance", date: "Oct 15, 2024", location: "Fort Barneveld", category: "Culture", img: "Performers in traditional red and white warrior costumes performing the Cakalele dance at a historic colonial fort site. Dramatic movement, traditional shields and wooden swords. Warm, earthy tones with historical depth." },
+                        { title: "Bacan Island Marathon", date: "Nov 05, 2024", location: "Labuha", category: "Sports", img: "Marathon runners traversing a coastal road lined with coconut trees and ocean views. The scene is bright and motivating, captured in a clean, modern sports photography style with soft morning shadows." },
+                        { title: "Coconut Craft Workshop", date: "Nov 12, 2024", location: "Wayaua Village", category: "Workshop", img: "Close-up of skilled hands carving intricate patterns into a coconut shell. Soft natural light in a traditional artisan workshop setting. Tactile, organic textures with a focus on craft and detail." },
+                        { title: "Full Moon Beach Party", date: "Nov 15, 2024", location: "Pogo-Pogo Island", category: "Lifestyle", img: "A chic beach lounge setup at night with small bonfires, glowing lanterns, and low white furniture on white sand. The moon reflects on the calm sea. Sophisticated, serene nightlife aesthetic with deep navy and warm orange accents." }
+                    ];
+
+                    document.write(eventData.map(event => `
+                        <div class="event-card-hover group bg-surface-container-lowest border border-outline-variant/30 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300">
+                            <div class="h-56 relative overflow-hidden">
+                                <div style="background-image: url('placeholder')" data-alt="${event.img}" class="event-image w-full h-full bg-cover bg-center transition-transform duration-500"></div>
+                                <div class="absolute top-4 right-4 bg-white/90 glass-effect px-3 py-1 rounded-lg text-secondary font-label-sm">${event.category}</div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-2 text-primary font-label-sm mb-2">
+                                    <span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                    ${event.date}
+                                </div>
+                                <h4 class="font-headline-md text-[20px] text-on-surface mb-3 leading-tight">${event.title}</h4>
+                                <div class="flex items-center gap-2 text-on-surface-variant font-body-md mb-6">
+                                    <span class="material-symbols-outlined text-[18px]">location_on</span>
+                                    ${event.location}
+                                </div>
+                                <button class="w-full py-3 rounded-xl border border-outline-variant font-label-md text-primary hover:bg-primary-fixed hover:border-primary-fixed transition-all">View Details</button>
+                            </div>
+                        </div>
+                    `).join(''));
+                </script>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex items-center justify-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary font-label-md">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all font-label-md">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all font-label-md">3</button>
+<span class="px-2 text-on-surface-variant">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all font-label-md">12</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant text-on-surface-variant hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-20">
+<div class="bg-primary/5 rounded-[40px] p-8 md:p-16 flex flex-col items-center text-center relative overflow-hidden">
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4 relative z-10">Never miss an event</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-xl relative z-10">Subscribe to our monthly newsletter to get exclusive early-bird event registrations and cultural insights from the Land of Kings.</p>
+<form class="flex flex-col sm:flex-row gap-4 w-full max-w-lg relative z-10">
+<input class="flex-1 px-6 py-4 rounded-xl border-outline-variant focus:border-primary-container focus:ring-0 font-body-md" placeholder="Enter your email address" required="" type="email"/>
+<button class="bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md hover:shadow-lg transition-all whitespace-nowrap" type="submit">Join Newsletter</button>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl bg-surface-container-highest border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-headline-lg font-headline-lg text-primary mb-6">HALSEA</div>
+<p class="text-on-surface-variant text-body-md mb-8">Discover the hidden gem of the North Moluccas. An archipelago of 1,000 islands waiting for your exploration.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">camera</span>
+</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-full bg-white text-primary hover:bg-primary hover:text-white transition-all shadow-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">video_library</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-all font-body-md" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all font-body-md" href="#">Destinations</a></li>
+<li><a class="text-secondary font-semibold font-body-md" href="#">Upcoming Events</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all font-body-md" href="#">Newsletter</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Support</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-all font-body-md" href="#">Contact Support</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all font-body-md" href="#">FAQ</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all font-body-md" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-all font-body-md" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Location</h4>
+<p class="text-on-surface-variant text-body-md mb-4">Pusat Informasi Pariwisata<br/>Labuha, Pulau Bacan<br/>Halmahera Selatan, Maluku Utara</p>
+<div class="flex items-center gap-2 text-primary font-label-md">
+<span class="material-symbols-outlined">mail</span>
+                    hello@halsea.go.id
+                </div>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 py-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<p class="text-on-surface-variant text-label-md">© 2024 HALSEA (Halmahera Selatan). All Rights Reserved. Explore the Land of Kings.</p>
+</div>
+</footer>
+<script>
+        // Smooth scroll reveal for cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.event-card-hover').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(card);
+        });
+    </script>
+</body></html>

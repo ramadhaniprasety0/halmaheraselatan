@@ -1,0 +1,396 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>HALSEA | Package Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary": "#006b54",
+                    "tertiary-fixed-dim": "#e5b9dc",
+                    "on-tertiary-container": "#492a45",
+                    "on-surface-variant": "#574235",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#f57c00",
+                    "on-background": "#1c1c19",
+                    "surface-dim": "#ddd9d5",
+                    "surface-container-low": "#f7f3ee",
+                    "tertiary-fixed": "#ffd7f6",
+                    "on-error": "#ffffff",
+                    "surface-container": "#f1ede8",
+                    "on-secondary-container": "#007259",
+                    "surface-container-highest": "#e6e2dd",
+                    "surface": "#fdf9f4",
+                    "on-primary-container": "#572800",
+                    "secondary-container": "#81f8d1",
+                    "outline-variant": "#dec1af",
+                    "surface-container-high": "#ebe8e3",
+                    "primary-fixed-dim": "#ffb786",
+                    "on-surface": "#1c1c19",
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#723600",
+                    "surface-tint": "#964900",
+                    "on-tertiary-fixed": "#2d112b",
+                    "on-primary-fixed": "#311300",
+                    "primary-fixed": "#ffdcc6",
+                    "on-error-container": "#93000a",
+                    "secondary-fixed": "#81f8d1",
+                    "primary": "#964900",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-fixed-variant": "#5d3c58",
+                    "error-container": "#ffdad6",
+                    "on-secondary-fixed": "#002117",
+                    "secondary-fixed-dim": "#63dbb6",
+                    "inverse-surface": "#31302d",
+                    "inverse-on-surface": "#f4f0eb",
+                    "outline": "#8b7263",
+                    "surface-bright": "#fdf9f4",
+                    "on-secondary-fixed-variant": "#00513e",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#b991b2",
+                    "background": "#fdf9f4",
+                    "tertiary": "#765371",
+                    "surface-variant": "#e6e2dd",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#ffb786"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "gutter": "24px",
+                    "base": "4px",
+                    "margin-mobile": "16px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #fdf9f4; color: #1c1c19; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+        .glass-nav { background: rgba(253, 249, 244, 0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(222, 193, 175, 0.2); }
+        .bento-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-template-rows: repeat(2, 200px); gap: 16px; }
+        .bento-main { grid-column: span 2; grid-row: span 2; }
+        @media (max-width: 768px) { .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; } .bento-main { grid-column: span 1; grid-row: span 1; } }
+        .itinerary-line::before { content: ''; position: absolute; left: 11px; top: 24px; bottom: 0; width: 2px; background: #dec1af; }
+        .itinerary-item:last-child .itinerary-line::before { display: none; }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl shadow-sm">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="text-headline-md font-headline-md font-bold tracking-tighter text-primary dark:text-primary-fixed-dim" href="#">HALSEA</a>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-label-md text-label-md" href="#">Destinations</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary dark:border-primary-fixed-dim pb-1 font-label-md text-label-md" href="#">Travel Packages</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors font-label-md text-label-md" href="#">Culinary</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block px-6 py-2 rounded-full font-label-md text-label-md text-primary border border-primary hover:bg-primary/5 transition-all">Sign In</button>
+<button class="px-6 py-2 rounded-full font-label-md text-label-md bg-primary-container text-on-primary-container font-bold hover:shadow-lg transition-all active:scale-95">Register</button>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Breadcrumb -->
+<nav class="flex items-center gap-2 mb-8 text-label-sm font-label-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Travel Packages</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-semibold">The Sultan's Archipelago Expedition</span>
+</nav>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-gutter items-start">
+<!-- Left Column: Content -->
+<div class="lg:col-span-2 space-y-12">
+<!-- Title & Rating -->
+<section>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full font-label-sm text-label-sm">Cultural Heritage</span>
+<span class="px-3 py-1 bg-tertiary/10 text-tertiary rounded-full font-label-sm text-label-sm">Premium Expedition</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-4">The Sultan's Archipelago Expedition</h1>
+<div class="flex items-center gap-4">
+<div class="flex items-center text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star_half</span>
+<span class="ml-2 font-label-md text-label-md text-on-surface">4.9 (128 Reviews)</span>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-md text-label-md border-l border-outline-variant pl-4">
+<span class="material-symbols-outlined">location_on</span>
+<span class="">South Halmahera, Indonesia</span>
+</div>
+</div>
+</section>
+<!-- Gallery: Bento Grid Style -->
+<section class="bento-grid">
+<div class="bento-main relative rounded-xl overflow-hidden shadow-sm group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A cinematic wide shot of a traditional wooden Phinisi boat sailing through the turquoise waters of South Halmahera at sunset. The sky is painted with vibrant oranges and deep purples reflecting the corporate Halsea color palette. The lush green volcanic islands rise in the background under a soft golden hour glow." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCvsYqCCowQtyCQtSeGQlAz0Hs3g5t27Ckke2eeXsPXg-zZtn83Oy8X7wflg5uWyQjuaLX70i3xZtxMT--lpTeMZdbWthrBhus16LDQn00xqW_KUGsqpSQZhD7QuBj4LQn6HCHEDi768DNe1U0b3hihvuwHFDuL9JE8_k9NL1zp0GdgMSCQyKm_x7QguJ8QW8_n5VydUTtm2W2TSGDRUFeCB_JO-ur3ejoMiJB66fQgmj660uXwjWyPChx0m18yAFiVzlFcg5ezAfM')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+<div class="relative rounded-xl overflow-hidden shadow-sm group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Close up photography of vibrant coral reefs teeming with exotic tropical fish in the crystal clear waters of Halmahera. The lighting is high-key and bright, highlighting the emerald greens and secondary brand colors. The mood is tranquil and serene, inviting discovery of underwater life." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCBri4WfgMtBZgl66yNaURnN5D3uO6sHjymwF7wYn-itSMqCsXUutjH59hvVfyMpNOMdrjR0umLNViFcGf0ZvcDJ3bPMTa_67GZGIY7pntBvxSi4Z5Z5_Mik79WrZjTv3sbL8UbS50KeZ-HEZ4GaO6g_RmP73xcgND2Hw6ESk5Dsv_kMeEBtSmnOvo0EHaeGVOsBuUkBarsOTLyk5R0O1JxiHuniLZ1SoOXnXCwoQkeBWHmD6mPzK2xdAd8k73CKj3QKCWQz3X2Xtg')"></div>
+</div>
+<div class="relative rounded-xl overflow-hidden shadow-sm group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="An aerial view of a pristine white sand beach surrounded by dense tropical jungle and a semi-circle of crystal blue ocean. The composition is artistic and minimalist, emphasizing the vast 'Sand' whitespace aesthetic of the Halsea brand. The sunlight is direct and warm." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBW7uuIEnnQ4LebMo7H8mjF6En7vCNDWINF3M88bAO_hXhD__KXECpKxb8Msf-7S24cjuLA0G7SM334uKDkB9UOG6dcoWruKsXIf1MDVUlRuMOQgTrW8J7A6XAtE40nKNAn5gwIPElanu2Qn7lLzRIDtueUP7k8GUnEG5sJAs_ch2nGCgo5abFSxtFyHqpOaF8o9quk9gBZ3siR88lSGYdFDeBGVgqxxZeU_uUT-XWwPtOJNAss7wGCadCfUsPFxV21C64bIhFF9CE')"></div>
+</div>
+<div class="relative rounded-xl overflow-hidden shadow-sm group">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Interior of a luxury eco-resort villa in Halmahera featuring local wood craftsmanship and modern minimalist furniture. Large floor-to-ceiling windows reveal a private infinity pool overlooking the ocean. The lighting is soft and diffused, creating a high-end corporate travel atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB59icgEIe6v7SxAuinWcM97QWKal9DIgXo2a7HcvFONv4jEZ84Vy9vVbyRiCHCPIGuof88DDdeXdzU5SS9I5ivdoqlmqV5RS-7YG7uPqH1gOZL6tYr8l0r_kppvf60AKWQSTomcuSeDn1_uMgFRkfSUQxTqUDxXfc6aC9et1zL1dxU6Sfpw3_fexutL-WSKOqHu9BBhiOCd7t16yPYGU1RGncbMgJr0TzLMI1Bqaz5S-g_GDVqVJT-wjP4j5m7dEYgDy3MoeLwI7g')"></div>
+</div>
+<div class="relative rounded-xl overflow-hidden shadow-sm group flex items-center justify-center bg-surface-container-highest">
+<span class="material-symbols-outlined text-4xl text-outline mb-2">grid_view</span>
+<button class="absolute inset-0 flex items-center justify-center bg-black/20 hover:bg-black/40 transition-colors text-white font-label-md text-label-md">View All 24 Photos</button>
+</div>
+</section>
+<!-- Package Info -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-4 p-8 bg-surface-container-low rounded-2xl border border-outline-variant/30">
+<div class="flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">schedule</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Duration</span>
+<span class="font-label-md text-label-md text-on-surface">5 Days 4 Nights</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">group</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Group Size</span>
+<span class="font-label-md text-label-md text-on-surface">Max 12 People</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">language</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Languages</span>
+<span class="font-label-md text-label-md text-on-surface">Eng, Ind, Ned</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="material-symbols-outlined text-primary mb-2 text-3xl">verified</span>
+<span class="text-on-surface-variant font-label-sm text-label-sm">Difficulty</span>
+<span class="font-label-md text-label-md text-on-surface">Moderate</span>
+</div>
+</section>
+<!-- Itinerary -->
+<section>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-8">Itinerary Timeline</h2>
+<div class="space-y-0">
+<!-- Day 1 -->
+<div class="itinerary-item relative pb-12">
+<div class="itinerary-line"></div>
+<div class="flex gap-6">
+<div class="relative z-10 w-6 h-6 rounded-full bg-primary flex items-center justify-center text-white text-[10px] font-bold ring-4 ring-surface">1</div>
+<div class="flex-1">
+<h3 class="font-label-md text-label-md text-primary mb-1 uppercase tracking-wider">Day 1: Arrival &amp; Sultan's Welcome</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Welcome to Labuha. Transfer to your luxury villa followed by a private audience at the Sultanate Palace of Bacan. Witness the traditional Ganda-Ganda dance over a welcome dinner.</p>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+<div class="h-32 rounded-lg bg-cover bg-center" data-alt="A majestic historical palace architecture with traditional Indonesian ornaments and golden carvings under a clear blue sky. The scene is bright and prestigious, reflecting the 'Land of Kings' theme." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXbiG0EaRoDrMfigxnJvEg4HHrjDh7IcKxBYJISf46bEA_yuemn5qmtMNIQtIdzUD-w8WpeGl_Q7Aumc0lvVx2AZA83TVQjRRYWaDQdiMSONJ_t6EjXnWBwrDaDup9lH73siRjKp6j9DQ7UnzDlnaeHBmR1uA-91p_pHRL7z6f-hk_hbBh6vZXbGIrE59YZG4NtWPXgN-yBR5dVbS0NJERCcEoZ5BGLPHzES-GrKMhH4NiXUu7hGnQz43ETFIA31nZBWatlSdNrdU')"></div>
+<div class="h-32 rounded-lg bg-cover bg-center" data-alt="Traditional dancers in vibrant silk costumes performing a ceremonial dance in a grand hall with polished wooden floors and warm ambient lighting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOEmkztgov9b_KXVGzKTHXt5FRJg3rAP94c3oz6V8SKVRdqLwfCZtWcuR4E1VkdKFEpp5F1-K6cWuznVk6HCQ7aVNI-NnUfdHDSeeQW7OAlkvdyNaOwB69sVfz4av9_vVwWafBu2L5khhQSjKmUHv1-bpWU9Hgbzo7q9diMRGe0mAgy9kB8_iSA2Uxq4IToYzIxl294Bpclgpvx0LE3vXvh9aUVyR1G7cbIFa1C3RsQMNypB-RbmtNpDsduu6x3Bep3y94lNqlFyI')"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Day 2 -->
+<div class="itinerary-item relative pb-12">
+<div class="itinerary-line"></div>
+<div class="flex gap-6">
+<div class="relative z-10 w-6 h-6 rounded-full bg-outline flex items-center justify-center text-white text-[10px] font-bold ring-4 ring-surface">2</div>
+<div class="flex-1">
+<h3 class="font-label-md text-label-md text-on-surface mb-1 uppercase tracking-wider">Day 2: Widi Islands Hidden Gem</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Full-day island hopping to the Widi Islands. Snorkel in crystal clear lagoons, enjoy a gourmet sand-bank picnic, and explore the untouched mangrove forests.</p>
+</div>
+</div>
+</div>
+<!-- Day 3 -->
+<div class="itinerary-item relative pb-12">
+<div class="itinerary-line"></div>
+<div class="flex gap-6">
+<div class="relative z-10 w-6 h-6 rounded-full bg-outline flex items-center justify-center text-white text-[10px] font-bold ring-4 ring-surface">3</div>
+<div class="flex-1">
+<h3 class="font-label-md text-label-md text-on-surface mb-1 uppercase tracking-wider">Day 3: Volcanic Treks &amp; Hot Springs</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">A sunrise trek to Mount Sibela's foothills followed by a therapeutic soak in natural geothermal hot springs hidden within the rainforest.</p>
+</div>
+</div>
+</div>
+</div>
+<button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-2">
+                        Expand Full Itinerary <span class="material-symbols-outlined">expand_more</span>
+</button>
+</section>
+<!-- Included / Excluded -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-outline-variant pt-12">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">check_circle</span> Included
+                        </h3>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check</span> 5-Star Accommodations (Villa)</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check</span> All Meals &amp; Gourmet Picnics</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check</span> Private Speedboat Transfers</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check</span> Professional Photography Service</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check</span> Local Museum &amp; Palace Fees</li>
+</ul>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-error">cancel</span> Excluded
+                        </h3>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-error text-sm mt-1">close</span> International Airfare</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-error text-sm mt-1">close</span> Travel Insurance (Recommended)</li>
+<li class="flex items-start gap-3"><span class="material-symbols-outlined text-error text-sm mt-1">close</span> Personal Souvenirs</li>
+</ul>
+</div>
+</section>
+<!-- Tour Guides -->
+
+<!-- Reviews -->
+<section class="border-t border-outline-variant pt-12">
+<div class="flex justify-between items-center mb-8">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Traveler Reviews</h2>
+<button class="px-6 py-2 border border-outline text-on-surface font-label-md text-label-md rounded-full hover:bg-surface-container transition-colors">Write a Review</button>
+</div>
+<div class="space-y-8">
+<div class="p-6 bg-white rounded-2xl border border-outline-variant/20 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-primary">JD</div>
+<div>
+<h5 class="font-label-md text-label-md">Julian D.</h5>
+<p class="text-label-sm font-label-sm text-on-surface-variant">October 2023 • Couple Trip</p>
+</div>
+</div>
+<div class="flex text-primary-container">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div></div></div></div></section></div><aside class="hidden lg:block sticky top-24">
+<div class="bg-white rounded-2xl border border-outline-variant/30 shadow-sm p-6 space-y-6">
+<div>
+<p class="text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider">Starting from</p>
+<div class="flex items-baseline gap-1">
+<span class="text-headline-md font-headline-md text-on-surface">IDR 2.450k</span>
+<span class="text-on-surface-variant font-body-md">/ person</span>
+</div>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface">Select Date</label>
+<div class="relative">
+<input class="w-full px-4 py-3 rounded-xl border border-outline-variant bg-surface-container-low font-body-md focus:ring-2 focus:ring-primary/20 outline-none" type="date">
+</div>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface">Travelers</label>
+<div class="flex items-center justify-between p-3 rounded-xl border border-outline-variant bg-surface-container-low">
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-outline-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-sm">remove</span></button>
+<span class="font-label-md text-label-md">2 People</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-full border border-outline-variant hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-sm">add</span></button>
+</div>
+</div>
+</div>
+<div class="pt-4 border-t border-outline-variant/30 space-y-3">
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span class="">IDR 2.450k x 2</span>
+<span class="">IDR 4.900k</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span class="">Service Fee</span>
+<span class="">IDR 150k</span>
+</div>
+<div class="flex justify-between font-label-md text-label-md text-on-surface pt-2">
+<span class="">Total</span>
+<span class="">IDR 5.050k</span>
+</div>
+</div>
+<div class="space-y-3">
+<button class="w-full py-4 bg-primary-container text-on-primary-container font-bold rounded-full hover:shadow-lg transition-all active:scale-95">Book Now</button>
+<button class="w-full py-4 border border-primary text-primary font-bold rounded-full hover:bg-primary/5 transition-all">Add to Inquiry</button>
+</div>
+<p class="text-center text-label-sm font-label-sm text-on-surface-variant">No payment required yet</p>
+</div>
+<div class="mt-6 space-y-6">
+  <h2 class="font-headline-md text-headline-md text-on-surface">Your Expedition Experts</h2>
+  <div class="space-y-4">
+    <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-outline-variant/30 shadow-sm">
+      <div class="w-16 h-16 rounded-full bg-cover bg-center flex-shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDsZbiPDURf0gW5SqI3M7G7kiRncuE9r_nIvylStlSKUhgH98V_8Lq2DDQP9A01ZP3VVv_ONWbUtXZwZvke6oGLGB0Y-pP6-GIuM5ufJsXZEKPjGq4UHwZXHzSljIUbJBYswyzQ8SP1QjtDv59KSGaM6jPAABbgCASM-hPG9l_lkOxRZXNS_ISOriw0SdBurdPp2dzmIc_ITwuyAa0BQ624d7Bvi_w63huOgUFAdQW6qWmOfxe2tQZ1o2P76l-NTsQ2J1Iay14CbM8')"></div>
+      <div>
+        <h4 class="font-label-md text-label-md text-on-surface">Rama Widjaja</h4>
+        <p class="text-[12px] font-label-sm text-secondary">Lead Guide</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 p-4 rounded-xl bg-white border border-outline-variant/30 shadow-sm">
+      <div class="w-16 h-16 rounded-full bg-cover bg-center flex-shrink-0" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCjwNn2mpDkISA3jBFkLMRV1S-_gCRGuVO4z9RqstWLoFWQYKZ8MsVXUGKkjMg2QVIBYfINniW1JolaQ0k-nwpNvRGlk5c5mPGwFJH2GhayTx0HfQ6nuxklA5DfJ6H2Bu_JHJyUDmAAhDemoAZpgXQ9ph2diCjLGUh-VvsxPezbTT0FtJmFqM1mpEYjQ48e37kzesg9BA3loBKUC-7p0je427eC7Ky6jlOTzuCn02k3H7G-W3ixeLDcXbxNyPHM_q4sIMddNrbtoCg')"></div>
+      <div>
+        <h4 class="font-label-md text-label-md text-on-surface">Maya Halim</h4>
+        <p class="text-[12px] font-label-sm text-secondary">Marine Biologist</p>
+      </div>
+    </div>
+  </div>
+</div></aside></div></main><footer class="bg-surface-container-highest dark:bg-surface-container-low border-t border-outline-variant w-full rounded-t-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+<div class="space-y-4">
+<div class="text-headline-lg font-headline-lg text-primary dark:text-primary-fixed-dim">HALSEA</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Explore the Land of Kings. Discover the hidden gems of South Halmahera.</p>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Quick Links</h4>
+<ul class="space-y-3">
+<li class=""><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">About Us</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Contact Support</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Legal</h4>
+<ul class="space-y-3">
+<li class=""><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Privacy Policy</a></li>
+<li class=""><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:underline transition-all" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Newsletter</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Subscribe for travel updates.</p>
+<div class="flex gap-2">
+<input class="flex-1 px-4 py-2 rounded-lg border border-outline-variant bg-surface focus:ring-2 focus:ring-primary/20 outline-none" placeholder="Email" type="email">
+<button class="px-4 py-2 bg-primary text-white rounded-lg font-label-md">Join</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant/30 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant">© 2024 HALSEA (Halmahera Selatan). All Rights Reserved. Explore the Land of Kings.</p>
+</div>
+</footer>
+
+</body></html>

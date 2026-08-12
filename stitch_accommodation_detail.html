@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HALSEA | Harmony Accommodations</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#006b54",
+                      "tertiary-fixed-dim": "#e5b9dc",
+                      "on-tertiary-container": "#492a45",
+                      "on-surface-variant": "#574235",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#f57c00",
+                      "on-background": "#1c1c19",
+                      "surface-dim": "#ddd9d5",
+                      "surface-container-low": "#f7f3ee",
+                      "tertiary-fixed": "#ffd7f6",
+                      "on-error": "#ffffff",
+                      "surface-container": "#f1ede8",
+                      "on-secondary-container": "#007259",
+                      "surface-container-highest": "#e6e2dd",
+                      "surface": "#fdf9f4",
+                      "on-primary-container": "#572800",
+                      "secondary-container": "#81f8d1",
+                      "outline-variant": "#dec1af",
+                      "surface-container-high": "#ebe8e3",
+                      "primary-fixed-dim": "#ffb786",
+                      "on-surface": "#1c1c19",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed-variant": "#723600",
+                      "surface-tint": "#964900",
+                      "on-tertiary-fixed": "#2d112b",
+                      "on-primary-fixed": "#311300",
+                      "primary-fixed": "#ffdcc6",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed": "#81f8d1",
+                      "primary": "#964900",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed-variant": "#5d3c58",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#002117",
+                      "secondary-fixed-dim": "#63dbb6",
+                      "inverse-surface": "#31302d",
+                      "inverse-on-surface": "#f4f0eb",
+                      "outline": "#8b7263",
+                      "surface-bright": "#fdf9f4",
+                      "on-secondary-fixed-variant": "#00513e",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#b991b2",
+                      "background": "#fdf9f4",
+                      "tertiary": "#765371",
+                      "surface-variant": "#e6e2dd",
+                      "error": "#ba1a1a",
+                      "inverse-primary": "#ffb786"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "80px",
+                      "gutter": "24px",
+                      "base": "4px",
+                      "margin-mobile": "16px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "headline-xl": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-xl": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl shadow-sm">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold tracking-tighter text-primary dark:text-primary-fixed-dim">HALSEA</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Destinations</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Events</a>
+<a class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Accommodations</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Interactive Map</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block px-6 py-2 rounded-full border border-outline text-primary font-label-md text-label-md hover:bg-primary/5 transition-all">Sign In</button>
+<button class="bg-primary text-white px-6 py-2 rounded-full font-label-md text-label-md shadow-lg shadow-primary/20 active:scale-95 transition-transform">Register</button>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-20">
+<!-- Breadcrumb -->
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-8">
+<nav class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<a class="hover:text-primary" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<a class="hover:text-primary" href="#">Accommodations</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-bold">The Royal Seafront Villa</span>
+</nav>
+</div>
+<!-- Gallery Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-12">
+<div class="grid grid-cols-1 md:grid-cols-4 grid-rows-2 gap-4 h-[400px] md:h-[600px]">
+<div class="md:col-span-2 md:row-span-2 rounded-xl overflow-hidden relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A luxury beachfront villa at sunset in Halmahera Selatan. The architecture is a blend of modern glass and traditional wood, with an infinity pool reflecting the deep orange and purple sky. The lighting is warm and inviting, emphasizing the serene, high-end tropical resort atmosphere. Professional architectural photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFo8DCV3XA73eF648EQ4o7UfqFYNpGNhG_045uboAOkU1LkvZwui6m4obw7UuFEikdUOq8N_77rbxfv8P1GNs8vl7chydlVoq97prCrC3Q-7OqFjgGp6VVuU4GIm8A_1r12alKtXuf_apSZDiFSo9e28g9S2EPcI2rcPF9StfNw1049ZwpHYrAMnSjxdcsQhFLTpmTr4g586opfe-kPqfbA6-rwbcosZDUTkYa2xKHv8HV8piBaB7NX4f8WQQHup--Azy-R-yo9dY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+</div>
+<div class="hidden md:block rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Interior of a luxury tropical bedroom with high ceilings, exposed wooden beams, and white linens. Floor-to-ceiling windows offer a panoramic view of the turquoise Halmahera sea. The room is flooded with soft natural daylight, creating a peaceful and airy corporate-retreat aesthetic. Sophisticated color palette of sand and emerald." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfXgjFqNe6JC92qbyB8kYWoygqosFqGmjKJxJm8jHrXPvHuKmfb3yLA7R50GXpAoWc-iXF2W479T4psId15Vn-0LatauH70im00002UvKfpjtrdpECjtOtARmXGRG7M6kXxs0sS348VAhTU7sRh2a4z--0EJdM8wCCKLhR9o8P28SRcUvlMgngKPXB9ICu0ZTL35rzaSPky4r5dkfb3zFfMRbvv_qnJyYa8vN8OmX3JbyUke0wLEFVGns3ZcNnJD8xv3zDoMI2r3c"/>
+</div>
+<div class="hidden md:block rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A private infinity pool overlooking a lush jungle and the distant blue ocean. The water is crystal clear, and the poolside deck is made of polished limestone. Two high-end sun loungers with emerald green cushions are positioned under a minimalist umbrella. The vibe is tranquil, exclusive, and premium. Bright daylight with soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7Lt4jAadxM25Z4Sd_9iTy9EWl8SZajCT1en_R75Lz9JELlA4v7rU-krUmp4BRvzIMBP5EK8IeYWoijqEn_EA8jywJNTJ_a3wedVmfjMDwgeAJ0fqTVA4b5kSHDb3M6Rlr7ed3_y-DAKS0XWykXY0Str_PFSwsiKUW1UG4HVNMSJccHZcfz0I6WDFsLi4QL58BEhuh3w_caOe7FrDXv1BUy4BH1xODsxrb0frMiEVPxcMIonxsFs6m-vhlQNSwkxuYaYAbD4Bd8Zw"/>
+</div>
+<div class="hidden md:block rounded-xl overflow-hidden group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="An open-air luxury dining area in a tropical resort. A dark wood table is set with artisanal white ceramics and emerald glassware. The background features lush tropical foliage and the sea at dusk, illuminated by subtle hidden warm LED lighting. The mood is intimate and high-end, reflecting the Halsea Harmony corporate identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9i4WSXaCRviJliQjwu--eO4X7jl5kAyC4gRMFRoy7QJQ8rQpekh3XY_ai1-dy6eAOgHalGmWqMB5wnAwBhijg816Nx-LQ0IJoc9CxU5zS4ZCCEaxwiChCE8jZDYoPvEy8YDI1MVLGcbIggGnvfgqqu56zG-Uj17vY4mjLEkVhPZ8XhYC3thY6WWOkFvImc-JlmPlCUv5vWBUUgJsXjjjqc_7UYX8ys7hEqUB0wDbkFfsLfmAtxc5k2OGlmYTTdQAmuzUjz_bCh-w"/>
+</div>
+<div class="hidden md:block rounded-xl overflow-hidden relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A bathroom in a luxury villa with a large stone soaking tub and a rainfall shower. One wall is entirely made of glass, facing a private garden with exotic tropical plants. The lighting is soft and zen-like, utilizing the 'Sand' whitespace aesthetic for a clean, corporate yet tactile feel. Professional interior design photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD4ppsHZN1qmFlPo-oJLnCSAXxRXdytS6o6h1XWrrAvLlbVgY4kwQVyYR84FtmqtQiawKV5sCqs-qvpgJUOj--TcuDjEB-rGVAbfJo7UkhNXJXYks0sT3v7cxCvAwl-nw4meIpcR6aZeXYvRFiEfev10_aSHK7oC0zDeisEv5lXZaWT1AJnXmQbCn2XumnJ6j3FyjoFummSZnuIaFFjFWABovNpEk8Id_pncFYWTgGWz-cITo1dFrjHgg6z7aVoSY_FvopG2bdxtM"/>
+<button class="absolute bottom-4 right-4 bg-white/90 backdrop-blur px-4 py-2 rounded-lg font-label-md text-label-md flex items-center gap-2 hover:bg-white transition-all shadow-sm">
+<span class="material-symbols-outlined">grid_view</span> Show all photos
+                    </button>
+</div>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-3 gap-12">
+<!-- Info Side -->
+<div class="lg:col-span-2 space-y-12">
+<!-- Title and Tags -->
+<div>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full font-label-sm text-label-sm">Beachfront</span>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full font-label-sm text-label-sm">Premium Resort</span>
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full font-label-sm text-label-sm">Sustainability Certified</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-2">The Royal Seafront Villa</h1>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-md">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">4.9</span>
+<span>(128 Reviews)</span>
+</div>
+<span>•</span>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined">location_on</span>
+<span>Labuha, South Halmahera</span>
+</div>
+</div>
+</div>
+<hr class="border-outline-variant"/>
+<!-- Description -->
+<section>
+<h2 class="font-headline-md text-headline-md mb-4">About this Sanctuary</h2>
+<p class="text-body-lg font-body-lg text-on-surface-variant leading-relaxed">
+                        Nestled on the edge of the pristine Maluku sea, The Royal Seafront Villa offers an unparalleled retreat into nature without sacrificing modern sophistication. Designed with the 'Halsea Harmony' philosophy, this villa integrates traditional Halmahera craftsmanship with world-class amenities. Wake up to the gentle sound of waves and spend your days exploring the nearby coral reefs or relaxing in your private infinity pool.
+                    </p>
+</section>
+<!-- Facilities -->
+<section>
+<h2 class="font-headline-md text-headline-md mb-6">What this place offers</h2>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary">wifi</span>
+<span class="font-label-md">High-speed Wi-Fi</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary">pool</span>
+<span class="font-label-md">Private Pool</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary">ac_unit</span>
+<span class="font-label-md">Air Conditioning</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary">restaurant</span>
+<span class="font-label-md">Private Chef Service</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary">waves</span>
+<span class="font-label-md">Ocean View</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface">
+<span class="material-symbols-outlined text-primary">fitness_center</span>
+<span class="font-label-md">Gym Access</span>
+</div>
+</div>
+<button class="mt-8 px-8 py-3 border border-outline rounded-xl font-label-md hover:bg-surface-container transition-colors">Show all 45 amenities</button>
+</section>
+<hr class="border-outline-variant"/>
+<!-- Policies -->
+<section>
+<h2 class="font-headline-md text-headline-md mb-6">House Rules &amp; Policies</h2>
+<div class="grid md:grid-cols-2 gap-8">
+<div>
+<h3 class="font-bold text-on-surface mb-3">Check-in / Check-out</h3>
+<ul class="space-y-2 text-on-surface-variant font-body-md">
+<li class="flex justify-between"><span>Check-in:</span> <span class="font-medium text-on-surface">After 2:00 PM</span></li>
+<li class="flex justify-between"><span>Check-out:</span> <span class="font-medium text-on-surface">Before 11:00 AM</span></li>
+</ul>
+</div>
+<div>
+<h3 class="font-bold text-on-surface mb-3">Cancellation Policy</h3>
+<p class="text-on-surface-variant font-body-md">Free cancellation for 48 hours. After that, cancel up to 7 days before check-in and get a 50% refund.</p>
+</div>
+</div>
+</section><hr class="border-outline-variant"/>
+<section class="space-y-8" id="room-selection">
+<h2 class="font-headline-md text-headline-md">Pilihan Kamar</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Room Card 1 -->
+<div class="bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/30 flex flex-col">
+<div class="h-48 overflow-hidden">
+<img alt="Ocean View Suite" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfXgjFqNe6JC92qbyB8kYWoygqosFqGmjKJxJm8jHrXPvHuKmfb3yLA7R50GXpAoWc-iXF2W479T4psId15Vn-0LatauH70im00002UvKfpjtrdpECjtOtARmXGRG7M6kXxs0sS348VAhTU7sRh2a4z--0EJdM8wCCKLhR9o8P28SRcUvlMgngKPXB9ICu0ZTL35rzaSPky4r5dkfb3zFfMRbvv_qnJyYa8vN8OmX3JbyUke0wLEFVGns3ZcNnJD8xv3zDoMI2r3c"/>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-bold text-on-surface text-lg mb-2">Ocean View Suite</h3>
+<div class="space-y-2 mb-6">
+<div class="flex items-center gap-2 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-[18px]">king_bed</span>
+<span>1 King Bed</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-[18px]">balcony</span>
+<span>Private Balcony</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-[18px]">ac_unit</span>
+<span>Air Conditioning</span>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<div>
+<span class="text-headline-md font-bold text-primary">$450</span>
+<span class="text-on-surface-variant text-label-sm">/ night</span>
+</div>
+<button class="bg-primary text-white px-6 py-2 rounded-full font-label-md hover:bg-primary/90 transition-all active:scale-95">Pilih Kamar</button>
+</div>
+</div>
+</div>
+<!-- Room Card 2 -->
+<div class="bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/30 flex flex-col">
+<div class="h-48 overflow-hidden">
+<img alt="Garden Deluxe Room" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD4ppsHZN1qmFlPo-oJLnCSAXxRXdytS6o6h1XWrrAvLlbVgY4kwQVyYR84FtmqtQiawKV5sCqs-qvpgJUOj--TcuDjEB-rGVAbfJo7UkhNXJXYks0sT3v7cxCvAwl-nw4meIpcR6aZeXYvRFiEfev10_aSHK7oC0zDeisEv5lXZaWT1AJnXmQbCn2XumnJ6j3FyjoFummSZnuIaFFjFWABovNpEk8Id_pncFYWTgGWz-cITo1dFrjHgg6z7aVoSY_FvopG2bdxtM"/>
+</div>
+<div class="p-6 flex-grow flex flex-col">
+<h3 class="font-bold text-on-surface text-lg mb-2">Garden Deluxe Room</h3>
+<div class="space-y-2 mb-6">
+<div class="flex items-center gap-2 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-[18px]">bed</span>
+<span>2 Queen Beds</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-[18px]">potted_plant</span>
+<span>Garden View</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant text-label-md">
+<span class="material-symbols-outlined text-[18px]">bathtub</span>
+<span>Stone Soaking Tub</span>
+</div>
+</div>
+<div class="mt-auto flex items-center justify-between">
+<div>
+<span class="text-headline-md font-bold text-primary">$380</span>
+<span class="text-on-surface-variant text-label-sm">/ night</span>
+</div>
+<button class="bg-primary text-white px-6 py-2 rounded-full font-label-md hover:bg-primary/90 transition-all active:scale-95">Pilih Kamar</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Sticky Booking Card -->
+<div class="lg:col-start-3">
+<div class="sticky top-28 glass-card rounded-2xl p-6 shadow-xl border border-outline-variant">
+<div class="flex justify-between items-end mb-6">
+<div>
+<span class="text-headline-md font-headline-md font-bold text-primary">$450</span>
+<span class="text-on-surface-variant font-label-md">/ night</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-surface">4.9</span>
+<span>• 128 reviews</span>
+</div>
+</div>
+<div class="space-y-4 mb-6">
+<div class="grid grid-cols-2 border border-outline rounded-xl overflow-hidden">
+<div class="p-3 border-r border-outline hover:bg-surface-container transition-colors cursor-pointer">
+<label class="block text-[10px] font-bold uppercase text-on-surface-variant tracking-wider">Check-in</label>
+<span class="text-body-md">Oct 12, 2024</span>
+</div>
+<div class="p-3 hover:bg-surface-container transition-colors cursor-pointer">
+<label class="block text-[10px] font-bold uppercase text-on-surface-variant tracking-wider">Check-out</label>
+<span class="text-body-md">Oct 17, 2024</span>
+</div>
+<div class="col-span-2 p-3 border-t border-outline hover:bg-surface-container transition-colors cursor-pointer">
+<label class="block text-[10px] font-bold uppercase text-on-surface-variant tracking-wider">Guests</label>
+<span class="text-body-md">2 Guests</span>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-white py-4 rounded-xl font-headline-md shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-[0.98]">
+                        Reserve Now
+                    </button>
+<p class="text-center text-on-surface-variant text-[12px] mt-4">You won't be charged yet</p>
+<div class="mt-6 space-y-3 pt-6 border-t border-outline-variant">
+<div class="flex justify-between text-body-md">
+<span>$450 x 5 nights</span>
+<span>$2,250</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span>Service fee</span>
+<span>$120</span>
+</div>
+<div class="flex justify-between text-body-md">
+<span>Eco-tax (Halsea Green)</span>
+<span>$45</span>
+</div>
+<div class="flex justify-between font-bold text-on-surface text-lg pt-3 border-t border-outline-variant">
+<span>Total</span>
+<span>$2,415</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Location & Map -->
+<section class="mt-20 bg-surface-container-low py-20 border-y border-outline-variant/30">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-2">The Heart of Labuha</h2>
+<p class="text-on-surface-variant font-body-lg">Perfectly positioned for both privacy and exploration.</p>
+</div>
+<button class="text-primary font-label-md flex items-center gap-2 hover:underline">
+                        Get Directions <span class="material-symbols-outlined">near_me</span>
+</button>
+</div>
+<div class="grid lg:grid-cols-3 gap-8">
+<div class="lg:col-span-2 rounded-2xl overflow-hidden h-[400px] shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A stylized minimalist map of Labuha city and the surrounding coastline in South Halmahera. The map uses the Halsea corporate palette: Sand backgrounds, Emerald green for forested areas, and Deep Sea navy for the ocean. A primary orange pin marks the location of the villa. High-end GIS design aesthetic." data-location="Labuha, Indonesia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_lDY4OaBxKiVXS9nnEcTT5w-CE-1SoYNTiR7G563Jaxu0JT0OwgPbiHq4KzMJn1OVWl3y02wTdsrukUlCg38js2Vr3vfYtzu8C-gWbU7oFddD_jJwSCaodJq4D0UAVmH0aoUPQXU1MQDeikH8b7Y3EMMEdla9oGOP-tOUwvbUuTLlin7xKD0g_JdFfU8qaKXwxr1TWD8X2EpyGaTsD-ZwRPvGnCJVYPQkQs7X4FGhJofZMCvldv6NHph7KyNdyW5M4OFFj6yQ88s"/>
+</div>
+<div class="space-y-6">
+<h3 class="font-bold text-on-surface">Nearby Attractions</h3>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-4 rounded-xl bg-white/50 border border-outline-variant/50">
+<div class="bg-secondary/10 p-2 rounded-lg text-secondary">
+<span class="material-symbols-outlined">nature_people</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Sibela National Park</h4>
+<p class="text-label-sm text-on-surface-variant">15 mins drive • Flora &amp; Fauna</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl bg-white/50 border border-outline-variant/50">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">castle</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Fort Bernaveld</h4>
+<p class="text-label-sm text-on-surface-variant">10 mins drive • Historic Site</p>
+</div>
+</div>
+<div class="flex items-start gap-4 p-4 rounded-xl bg-white/50 border border-outline-variant/50">
+<div class="bg-tertiary/10 p-2 rounded-lg text-tertiary">
+<span class="material-symbols-outlined">shopping_bag</span>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Labuha Local Market</h4>
+<p class="text-label-sm text-on-surface-variant">8 mins drive • Culinary</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mt-20">
+<div class="flex items-center gap-2 mb-10">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">star</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">4.9 · 128 Reviews</h2>
+</div>
+<div class="grid md:grid-cols-2 gap-x-20 gap-y-12">
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a professional man in his 40s, smiling, with a clean corporate headshot aesthetic. Soft lighting, high-end photography. The person looks relaxed and happy, suggesting a satisfied traveler. The background is a soft blur of a tropical resort." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwraRU6_URtzYtnoLGBUItq6dKz47uE1R4nzdR0BAJSOUj4Q48cNvyzpBJTgasAxtrllGZGfp9_TsFIgqLXh1gOCIVXbzBmW2B1fRpbMf1FSlqV-0D18VKgx1uhqsSj1EN6l-6gl2qa9qiXzEOhS_RMDVlmTbTP89XoH0y9GwiLDkEssbfPXSzqx8rsRTwzBDabWyoYdtnJyre8hNqD3loJIGhKXoXZJKUjrQKPA3JtoacktUANcnvX0H7k7t2MxEHMvSwGt42NPQ"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Alexander Grant</h4>
+<p class="text-label-sm text-on-surface-variant">October 2023</p>
+</div>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+                        An absolutely breathtaking experience. The attention to detail in the architecture and the hospitality was world-class. The private chef prepared some of the best local seafood I've ever had. Truly a gem in Halmahera.
+                    </p>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Close up of a stylish woman in her 30s with a modern professional look. Bright, natural outdoor lighting. She has a look of contentment and peace. High-end lifestyle photography style that matches the Halsea Harmony brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDi7dLvHaMlMmKKGupwfTgng4avZJwIU5_vaGbCiApa7cfi9OqvZzQsnddfMbV23MAaqNsg4r7-hp91kTQk0z_fLUFoyoWoSaX0YmT6pTbL1a8Md2lpB9AEs8zfYlop2J5Ep-AfadWLvNXnK_XXmPFGNwqfvdVkANFHLAjY3JO-XZLb2Zx1IYgLJh9QtcQBozs8q8FhtYsuDz2DRwchd-jglaQlWOwTnCQttmG9bQJnhNO0pV2kDnUcRldBM3dNw6sCN8UrYplMs8M"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Elena Sorova</h4>
+<p class="text-label-sm text-on-surface-variant">September 2023</p>
+</div>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+                        The views are even better in person! We loved waking up to the ocean every morning. The staff went above and beyond to organize a private diving excursion for us. Highly recommended for couples.
+                    </p>
+</div>
+</div>
+<button class="mt-12 px-8 py-3 border border-outline rounded-xl font-label-md hover:bg-surface-container transition-colors">Show all 128 reviews</button>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-low border-t border-outline-variant w-full rounded-t-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="text-headline-lg font-headline-lg text-primary dark:text-primary-fixed-dim">HALSEA</div>
+<p class="text-on-surface-variant dark:text-surface-variant font-body-md">Explore the pristine beauty of Halmahera Selatan. From hidden beaches to historical landmarks, discover the Land of Kings.</p>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Discover</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Destinations</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Travel Packages</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Local Culture</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Diving Sites</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Support</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Contact Support</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">FAQ</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Stay Inspired</h4>
+<p class="text-on-surface-variant mb-4 font-body-md">Join our newsletter for the latest travel guides and exclusive offers.</p>
+<div class="flex gap-2">
+<input class="bg-surface rounded-lg border-outline-variant/50 focus:ring-primary w-full" placeholder="Your email" type="email"/>
+<button class="bg-primary text-white p-2 rounded-lg hover:scale-95 transition-transform">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-8 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-on-surface-variant font-label-md">© 2024 HALSEA (Halmahera Selatan). All Rights Reserved. Explore the Land of Kings.</p>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">rss_feed</span></a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for the booking card
+        const reserveBtn = document.querySelector('button.bg-primary');
+        if (reserveBtn) {
+            reserveBtn.addEventListener('mouseenter', () => {
+                reserveBtn.classList.add('shadow-primary-fixed');
+            });
+            reserveBtn.addEventListener('mouseleave', () => {
+                reserveBtn.classList.remove('shadow-primary-fixed');
+            });
+        }
+
+        // Navbar blur on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

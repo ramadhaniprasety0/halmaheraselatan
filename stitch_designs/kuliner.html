@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Culinary Excellence | HALSEA - Land of Kings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.5);
+        }
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #fdf9f4;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #dec1af;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8b7263;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#006b54",
+                      "tertiary-fixed-dim": "#e5b9dc",
+                      "on-tertiary-container": "#492a45",
+                      "on-surface-variant": "#574235",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#f57c00",
+                      "on-background": "#1c1c19",
+                      "surface-dim": "#ddd9d5",
+                      "surface-container-low": "#f7f3ee",
+                      "tertiary-fixed": "#ffd7f6",
+                      "on-error": "#ffffff",
+                      "surface-container": "#f1ede8",
+                      "on-secondary-container": "#007259",
+                      "surface-container-highest": "#e6e2dd",
+                      "surface": "#fdf9f4",
+                      "on-primary-container": "#572800",
+                      "secondary-container": "#81f8d1",
+                      "outline-variant": "#dec1af",
+                      "surface-container-high": "#ebe8e3",
+                      "primary-fixed-dim": "#ffb786",
+                      "on-surface": "#1c1c19",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed-variant": "#723600",
+                      "surface-tint": "#964900",
+                      "on-tertiary-fixed": "#2d112b",
+                      "on-primary-fixed": "#311300",
+                      "primary-fixed": "#ffdcc6",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed": "#81f8d1",
+                      "primary": "#964900",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed-variant": "#5d3c58",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#002117",
+                      "secondary-fixed-dim": "#63dbb6",
+                      "inverse-surface": "#31302d",
+                      "inverse-on-surface": "#f4f0eb",
+                      "outline": "#8b7263",
+                      "surface-bright": "#fdf9f4",
+                      "on-secondary-fixed-variant": "#00513e",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#b991b2",
+                      "background": "#fdf9f4",
+                      "tertiary": "#765371",
+                      "surface-variant": "#e6e2dd",
+                      "error": "#ba1a1a",
+                      "inverse-primary": "#ffb786"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "80px",
+                      "gutter": "24px",
+                      "base": "4px",
+                      "margin-mobile": "16px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "headline-xl": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-xl": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+      </script>
+</head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-headline-md font-headline-md font-bold tracking-tighter text-primary">HALSEA</span>
+<div class="hidden md:flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Destinations</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Events</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Accommodations</a>
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Culinary</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Travel Packages</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block text-on-surface-variant font-label-md text-label-md hover:text-primary transition-colors">Sign In</button>
+<button class="bg-primary-container text-on-primary font-bold px-6 py-2.5 rounded-xl hover:opacity-90 transition-all active:scale-95 text-label-md font-label-md">Register</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-20">
+<!-- Breadcrumb -->
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-8">
+<nav class="flex items-center gap-2 text-label-sm font-label-sm text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Explore Culinary</span>
+</nav>
+</div>
+<!-- Hero Header -->
+<header class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16">
+<div class="relative rounded-3xl overflow-hidden h-[400px] flex items-end">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="A high-end cinematic wide shot of a traditional Halmahera feast set on a pristine white sand beach at sunset. The table is laden with vibrant local seafood, exotic spices, and tropical fruits. Soft golden hour light bathes the scene in warm orange and pink hues, creating a luxurious and inviting atmosphere. In the background, the calm Deep Sea navy waters of the Maluku sea reflect the glowing sky. The overall aesthetic is professional, premium, and evocative of the Land of Kings." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChMJ0IdwPwXV9-lDCEwl6Si0XSPHJ3r8E-K_6-hyjQLfjmqNz5M0P_ew03Y1SVM5EW5NTpQbAyThzHh3sJ6XfL7cJJTAdyx8u9obmH0Xjq-ifHYcA2WQb9h2zlmpdNXwguuhDQR9zKeNmddIT2UPHxsJpMoz_v8b2tQQiTG949Y-Acz2P7QZ6LFJCvj6TUue2WaFJFysCN3o0sopPVkQETlqctP2wNM-AVSmGE9JpQa5QvpqW79-0qzXFp_64ro4lZA5XOn_3SzB4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+</div>
+<div class="relative z-10 p-8 md:p-12 max-w-2xl">
+<span class="inline-block px-4 py-1 bg-secondary text-white rounded-full text-label-sm font-label-sm mb-4">Taste of Maluku</span>
+<h1 class="text-white font-headline-xl text-headline-xl mb-4 leading-tight">Culinary Heritage of Halmahera Selatan</h1>
+<p class="text-white/80 font-body-lg text-body-lg">From street-side sago delicacies to high-end seafood dining, discover the rich flavors of the spice islands.</p>
+</div>
+</div>
+</header>
+<!-- Filters Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-16">
+<div class="bg-surface-container rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-end">
+<div class="flex-1 w-full space-y-2">
+<label class="text-label-md font-label-md text-on-surface-variant block">Search Specialties</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary-container outline-none transition-all font-body-md" placeholder="Papeda, Gohu Ikan, Grilled Lobster..." type="text"/>
+</div>
+</div>
+<div class="w-full md:w-48 space-y-2">
+<label class="text-label-md font-label-md text-on-surface-variant block">Category</label>
+<select class="w-full px-4 py-3 bg-surface border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary-container outline-none appearance-none font-body-md">
+<option>All Types</option>
+<option>Seafood</option>
+<option>Traditional</option>
+<option>Desserts</option>
+</select>
+</div>
+<div class="w-full md:w-48 space-y-2">
+<label class="text-label-md font-label-md text-on-surface-variant block">Price Range</label>
+<select class="w-full px-4 py-3 bg-surface border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary-container outline-none appearance-none font-body-md">
+<option>Any Price</option>
+<option>$ - Budget</option>
+<option>$$ - Mid-range</option>
+<option>$$$ - Fine Dining</option>
+</select>
+</div>
+<div class="w-full md:w-48 space-y-2">
+<label class="text-label-md font-label-md text-on-surface-variant block">Location</label>
+<select class="w-full px-4 py-3 bg-surface border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary-container outline-none appearance-none font-body-md">
+<option>All Locations</option>
+<option>Labuha</option>
+<option>Bacan Island</option>
+<option>Obi Island</option>
+</select>
+</div>
+<button class="bg-primary text-white w-full md:w-auto px-8 py-3.5 rounded-xl font-bold hover:opacity-90 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">filter_list</span> Apply
+                </button>
+</div>
+</section>
+<!-- Featured Culinary Card (Bento Style) -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-20">
+<div class="flex items-center justify-between mb-8">
+<h2 class="font-headline-lg text-headline-lg text-primary">Chef's Recommendations</h2>
+<a class="text-secondary font-bold hover:underline flex items-center gap-2" href="#">View All Specialties <span class="material-symbols-outlined">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 group relative overflow-hidden rounded-3xl h-[500px]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A gourmet close-up of 'Gohu Ikan'—Halmahera's tuna ceviche. The fresh, translucent tuna cubes are garnished with sea salt, chili, calamansi, and aromatic basil. The dish is presented in a handcrafted artisanal ceramic bowl, set against a blurred background of a premium seaside terrace. Lighting is crisp and natural, highlighting the freshness and vibrant colors. The style is sophisticated and high-end, fitting the Halsea Harmony brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBbSK-3xBbeQhN6-y0r1d6SECMYB82XGiOahZUkDXZeselef3lI4giiwok5czhvkuhfHzGqVjFzlu5ueioYaOJ4dSEwsAZ3EA-hi1ClsPUNUTOMtnUEk5IGsEuDIOneL-asGROkIPPz_4nC0I3mIBzF0TRQB_gwimL_yfDzzAc2pywKTBgp_5RdUS_dAWCNK2L5lkE9cO2XdjHKTbRraPmGNniXjXCMkPZUwpfx6A08R7fwpowfG4UelMgsWINdkKPygeOZoBePOQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-10">
+<div class="flex gap-2 mb-4">
+<span class="bg-primary-container text-on-primary px-3 py-1 rounded-full text-label-sm font-label-sm">Signature Dish</span>
+<span class="bg-white/20 backdrop-blur-md text-white px-3 py-1 rounded-full text-label-sm font-label-sm">5.0 ★</span>
+</div>
+<h3 class="text-white font-headline-lg text-headline-lg mb-2">Authentic Bacan Gohu Ikan</h3>
+<p class="text-white/80 max-w-lg mb-6">Experience the 'Sashimi of Ternate'—fresh yellowfin tuna marinated in calamansi and bird's eye chili, served with crushed nuts and basil.</p>
+<button class="w-fit bg-white text-primary font-bold px-8 py-3 rounded-xl hover:bg-primary-fixed transition-all active:scale-95">Explore Restaurant</button>
+</div>
+</div>
+<div class="md:col-span-4 grid grid-rows-2 gap-gutter">
+<div class="group relative overflow-hidden rounded-3xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A close-up of sizzling grilled lobster served on a banana leaf, basted with traditional spicy 'Rica-rica' sauce. The lighting is warm and atmospheric, emphasizing the charred texture and rich red spices. Background features a glimpse of a luxury open-air restaurant in Halmahera. Modern and professional food photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhkU-XcvFdd7fYWeYzpkGSNvxqjc1TkneqRpjf14itu_g-kLFo9Smnw8vJU2pdwpywl9Bmmaps4yaDSrSiFA95p4FSr7pSrBqKRsv6KZJDtyOpI0hQezRvLsEimaejlF4gWuJFuu1PIpRoH2Wj4jP1014x03bFibCb3fYz5kpIqBdK_rfUaz4HTUMqM11BX55obgQoopxH7TmQpr0nkVCRYEcM1AOSGLeUWhWCHpE8268c2IYqtikZ0hIzTmFdHj5bMk1N_iY-lwY"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all flex flex-col justify-end p-6">
+<h4 class="text-white font-headline-md text-headline-md">Sizzling Spicy Lobster</h4>
+<p class="text-white/80 text-label-md font-label-md">Ocean-to-table freshness</p>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded-3xl">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A traditional spread of Papeda with Yellow Fish Soup (Ikan Kuah Kuning). The steaming soup is vibrant yellow from turmeric, filled with chunks of fresh fish and herbs. The translucent papeda is elegantly swirled into a bowl. Minimalist and high-contrast presentation on a clean sand-colored surface. Corporate and clean travel aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBESbrAFR62Uhw6dVg8jJp6eytttNsORqXJjyYqQhfDvBkTyzXRcNQNWFXfy7E1ZtyxEETRrZ311lo9ov79GuYT83PC94WUpoGDN_OgblyO1zJgLXqepfIOZ3ZO5vDlTl-9tZA_OKTwTP2ZvKq56UawQaLHUdF5qvff9x-NpPCGFT78ZE85wURhupeQ8NQjIjoz61lyvuumebTzxyjyJ5oIh3L9HzRXV9mPeDm2_16i58EjG7C9yJE_kH2lD5hK99UUjDhlKNj4-l8"/>
+<div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all flex flex-col justify-end p-6">
+<h4 class="text-white font-headline-md text-headline-md">Traditional Papeda Ritual</h4>
+<p class="text-white/80 text-label-md font-label-md">The heart of East Indonesia</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Culinary Grid -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-20">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card Template (Repeat 12 times with different content) -->
+<script>
+                    const dishes = [
+                        { name: "Yellow Fish Soup", cat: "Traditional", loc: "Labuha", price: "$$", rating: "4.8", img: "A vibrant bowl of turmeric fish soup with fresh herbs." },
+                        { name: "Sago Cakes", cat: "Dessert", loc: "Bacan", price: "$", rating: "4.5", img: "Stacked artisanal sago cakes with a coconut drizzle." },
+                        { name: "Grilled Snapper", cat: "Seafood", loc: "Obi", price: "$$$", rating: "4.9", img: "Whole grilled snapper on a bed of tropical greens." },
+                        { name: "Dabu-Dabu Sauce", cat: "Traditional", loc: "Labuha", price: "$", rating: "4.7", img: "Close-up of fresh tomato and chili salsa in a stone bowl." },
+                        { name: "Crab in Spicy Sauce", cat: "Seafood", loc: "South Bacan", price: "$$$", rating: "5.0", img: "Large mud crab covered in rich, aromatic red sauce." },
+                        { name: "Smoked Tuna", cat: "Street Food", loc: "Central Labuha", price: "$", rating: "4.6", img: "Traditional smoked tuna strips at a local market." },
+                        { name: "Coconut Pudding", cat: "Dessert", loc: "Kasiruta", price: "$$", rating: "4.4", img: "Silky coconut pudding served in a natural shell." },
+                        { name: "Octopus Salad", cat: "Seafood", loc: "Makian", price: "$$", rating: "4.8", img: "Fresh octopus salad with citrus and local herbs." },
+                        { name: "Spiced Coffee", cat: "Beverage", loc: "Labuha", price: "$", rating: "4.9", img: "Traditional coffee infused with ginger and cloves." },
+                        { name: "Beef Satay Maranggi", cat: "Meat", loc: "Bacan", price: "$$", rating: "4.7", img: "Grilled beef skewers with sweet soy and chili." },
+                        { name: "Fried Cassava", cat: "Snack", loc: "Gane", price: "$", rating: "4.3", img: "Golden crispy fried cassava with sambal dip." },
+                        { name: "Exotic Fruit Platter", cat: "Fresh", loc: "Various", price: "$$", rating: "4.5", img: "Array of tropical fruits including durian and rambutan." }
+                    ];
+
+                    dishes.forEach(dish => {
+                        document.write(`
+                            <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
+                                <div class="relative h-56 overflow-hidden">
+                                    <img src="placeholder" data-alt="${dish.img} Professional food photography, warm lighting, high-end travel vibe, corporate aesthetic." class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-lg text-label-sm font-label-sm flex items-center gap-1 text-primary">
+                                        <span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span> ${dish.rating}
+                                    </div>
+                                </div>
+                                <div class="p-6 flex-1 flex flex-col">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <span class="text-secondary text-label-sm font-label-sm font-bold uppercase tracking-wider">${dish.cat}</span>
+                                        <span class="text-on-surface-variant text-label-sm font-label-sm">${dish.price}</span>
+                                    </div>
+                                    <h3 class="font-headline-md text-headline-md mb-2 group-hover:text-primary transition-colors">${dish.name}</h3>
+                                    <div class="flex items-center gap-1 text-on-surface-variant mb-6">
+                                        <span class="material-symbols-outlined text-[18px]">location_on</span>
+                                        <span class="text-label-md font-label-md">${dish.loc}</span>
+                                    </div>
+                                    <button class="mt-auto w-full py-3 border border-outline text-primary font-bold rounded-xl hover:bg-primary hover:text-white transition-all active:scale-95">Explore Details</button>
+                                </div>
+                            </div>
+                        `);
+                    });
+                </script>
+</div>
+</section>
+<!-- Pagination -->
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-24 flex justify-center items-center gap-2">
+<button class="w-10 h-10 rounded-full flex items-center justify-center border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center bg-primary text-white font-bold">1</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary transition-all">2</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary transition-all">3</button>
+<span class="px-2">...</span>
+<button class="w-10 h-10 rounded-full flex items-center justify-center border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary transition-all">8</button>
+<button class="w-10 h-10 rounded-full flex items-center justify-center border border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary transition-all">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+<!-- Newsletter Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop mb-20">
+<div class="relative bg-secondary-container rounded-[40px] p-8 md:p-16 overflow-hidden flex flex-col md:flex-row items-center gap-12">
+<div class="absolute top-0 right-0 w-64 h-64 bg-secondary/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+<div class="relative z-10 md:w-1/2">
+<h2 class="font-headline-xl text-headline-xl text-on-secondary-container mb-4">Savor Every Moment</h2>
+<p class="text-on-secondary-container/80 font-body-lg text-body-lg">Subscribe to get exclusive recipes, restaurant opening alerts, and seasonal food festival updates directly in your inbox.</p>
+</div>
+<div class="relative z-10 md:w-1/2 w-full">
+<form class="flex flex-col sm:flex-row gap-4">
+<input class="flex-1 px-6 py-4 rounded-2xl bg-white border-none focus:ring-2 focus:ring-primary outline-none font-body-md shadow-sm" placeholder="Your email address" type="email"/>
+<button class="bg-primary text-white font-bold px-8 py-4 rounded-2xl hover:opacity-90 transition-all shadow-lg active:scale-95" type="submit">Join the Feast</button>
+</form>
+<p class="text-on-secondary-container/60 text-label-sm font-label-sm mt-4">We respect your privacy. Unsubscribe at any time.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl bg-surface-container-highest border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+<div class="space-y-6">
+<span class="text-headline-lg font-headline-lg text-primary">HALSEA</span>
+<p class="text-on-surface-variant text-body-md font-body-md">Explore the majestic archipelago of Halmahera Selatan. From volcanic peaks to coral reefs, discover the Land of Kings.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#"><span class="material-symbols-outlined">share</span></a>
+</div>
+</div>
+<div>
+<h4 class="text-primary font-headline-md text-headline-md mb-6">Quick Links</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Destinations</a></li>
+<li><a class="text-secondary font-semibold hover:underline" href="#">Culinary</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Travel Packages</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary font-headline-md text-headline-md mb-6">Resources</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">FAQ</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Newsletter</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Contact Support</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors hover:underline" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-primary font-headline-md text-headline-md mb-6">Headquarters</h4>
+<p class="text-on-surface-variant text-body-md font-body-md mb-4">Jl. Raya Labuha, Bacan Island, Halmahera Selatan, Maluku Utara</p>
+<p class="text-on-surface-variant text-body-md font-body-md">info@halsea.travel<br/>+62 (0) 927 1234 567</p>
+</div>
+</div>
+<div class="border-t border-outline-variant py-8 px-margin-mobile md:px-margin-desktop text-center text-on-surface-variant text-label-md font-label-md max-w-container-max mx-auto">
+            © 2024 HALSEA (Halmahera Selatan). All Rights Reserved. Explore the Land of Kings.
+        </div>
+</footer>
+<script>
+        // Micro-interaction for filter inputs
+        document.querySelectorAll('input, select').forEach(el => {
+            el.addEventListener('focus', () => {
+                el.parentElement.classList.add('scale-[1.01]');
+            });
+            el.addEventListener('blur', () => {
+                el.parentElement.classList.remove('scale-[1.01]');
+            });
+        });
+    </script>
+</body></html>

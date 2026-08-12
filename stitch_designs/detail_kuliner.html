@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gohu Ikan - Culinary Experience | HALSEA</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Poppins:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fdf9f4; /* Sand background */
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 200px);
+            gap: 16px;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#63dbb6",
+                        "on-secondary-container": "#007259",
+                        "on-primary-container": "#572800",
+                        "surface-dim": "#ddd9d5",
+                        "inverse-primary": "#ffb786",
+                        "surface-bright": "#fdf9f4",
+                        "primary-fixed-dim": "#ffb786",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "tertiary": "#765371",
+                        "outline": "#8b7263",
+                        "on-primary-fixed": "#311300",
+                        "tertiary-fixed-dim": "#e5b9dc",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#964900", /* Primary Orange mapped to system */
+                        "halsea-orange": "#F57C00",
+                        "halsea-emerald": "#009B7A",
+                        "halsea-deepsea": "#0D3B4C",
+                        "surface-tint": "#964900",
+                        "surface-container": "#f1ede8",
+                        "on-secondary-fixed": "#002117",
+                        "surface": "#fdf9f4",
+                        "secondary": "#006b54",
+                        "surface-variant": "#e6e2dd",
+                        "on-tertiary-container": "#492a45",
+                        "primary-container": "#f57c00",
+                        "on-secondary-fixed-variant": "#00513e",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#b991b2",
+                        "on-primary-fixed-variant": "#723600",
+                        "primary-fixed": "#ffdcc6",
+                        "background": "#fdf9f4",
+                        "secondary-fixed": "#81f8d1",
+                        "on-tertiary-fixed": "#2d112b",
+                        "on-surface-variant": "#574235",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#1c1c19",
+                        "surface-container-highest": "#e6e2dd",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#dec1af",
+                        "on-tertiary-fixed-variant": "#5d3c58",
+                        "inverse-surface": "#31302d",
+                        "inverse-on-surface": "#f4f0eb",
+                        "surface-container-low": "#f7f3ee",
+                        "surface-container-high": "#ebe8e3",
+                        "tertiary-fixed": "#ffd7f6",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1c1c19"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Poppins"],
+                        "label-md": ["Poppins"],
+                        "label-sm": ["Poppins"],
+                        "headline-xl": ["Poppins"],
+                        "headline-md": ["Poppins"],
+                        "body-md": ["Poppins"],
+                        "body-lg": ["Poppins"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-xl": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="flex items-center" href="#">
+<img alt="HALSEA Logo" class="h-10 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEdkCA6kGd2elOk-PnYNSFcSsElHv-WwcI27ETc7hphI3OnDDK55m-lyYW7RXo7mQkrRgsthRpBD_gmMI5F2bNijJlYDpXmdTJIOA8667_enOX45epgU_8uJp1XJ8-47w4FCbiTCiPGvynbamM8hTbd4DbsT4oUORI2M1ELj2lMP2wGpf8tGMcUI-cNI51SBmGr_-TcvBj3er-PmEnwErPQYkoB57wuhYheUOTPubC5DzwzL-4a5Z7w9A1RR_vZrJZU7kpBxuKDDo"/>
+<span class="ml-2 text-headline-md font-bold tracking-tighter text-halsea-deepsea">HALSEA</span>
+</a>
+<nav class="hidden md:flex gap-6">
+<a class="text-on-surface-variant hover:text-halsea-orange transition-colors font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-halsea-orange transition-colors font-label-md text-label-md" href="#">Destinations</a>
+<a class="text-on-surface-variant hover:text-halsea-orange transition-colors font-label-md text-label-md" href="#">Events</a>
+<a class="text-halsea-deepsea font-bold border-b-2 border-halsea-orange pb-1 font-label-md text-label-md" href="#">Culinary</a>
+<a class="text-on-surface-variant hover:text-halsea-orange transition-colors font-label-md text-label-md" href="#">Interactive Map</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex items-center bg-surface-container rounded-full px-4 py-2 border border-outline-variant/30">
+<span class="material-symbols-outlined text-on-surface-variant mr-2">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-32 lg:w-48" placeholder="Search..." type="text"/>
+</div>
+<button class="text-on-surface-variant font-label-md px-4 py-2 hover:bg-halsea-orange/5 rounded-lg transition-all">Sign In</button>
+<button class="bg-halsea-orange text-white font-label-md px-6 py-2 rounded-xl shadow-md hover:scale-105 active:scale-95 transition-all">Register</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-20 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<!-- Breadcrumb -->
+<nav class="flex mb-8 text-label-sm font-label-sm text-on-surface-variant/70 items-center gap-2">
+<a class="hover:text-halsea-orange" href="#">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-halsea-orange" href="#">Culinary</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-halsea-deepsea font-semibold">Gohu Ikan</span>
+</nav>
+<!-- Hero Section & Gallery -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+<!-- Information Left -->
+<div class="lg:col-span-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-4 mb-4">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-halsea-deepsea mb-2">Gohu Ikan</h1>
+<div class="flex items-center gap-4">
+<div class="flex items-center text-halsea-orange">
+<span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-1 font-bold">4.9</span>
+<span class="text-on-surface-variant font-normal ml-1">(2.4k Reviews)</span>
+</div>
+<div class="flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined mr-1">location_on</span>
+<span>Ternate, North Maluku</span>
+</div>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="p-3 rounded-xl border border-outline-variant hover:bg-halsea-orange/10 transition-colors">
+<span class="material-symbols-outlined">share</span>
+</button>
+<button class="p-3 rounded-xl border border-outline-variant hover:bg-halsea-orange/10 transition-colors">
+<span class="material-symbols-outlined">favorite</span>
+</button>
+</div>
+</div>
+<!-- Bento Gallery -->
+<div class="lg:col-span-8">
+<div class="grid grid-cols-4 grid-rows-2 gap-4 h-[500px]">
+<div class="col-span-3 row-span-2 relative group overflow-hidden rounded-2xl">
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60 group-hover:opacity-40 transition-opacity"></div>
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A macro professional food photography shot of Gohu Ikan, showing translucent cubes of fresh raw yellowfin tuna glistening in a bowl, garnished with emerald green basil leaves, crushed toasted kenari nuts, and sliced red chilies. The lighting is warm and natural, suggesting a tropical seaside restaurant setting in Halmahera Selatan with soft bokeh in the background. The colors are vibrant with deep reds, bright greens, and the natural fleshy pink of the fish." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC65fsiKD7047mNEggrfN8tWGvAqg5fDT2EbolAh72TWV9cYCjBNSqCeFGo3-CSVR81ESDuu9zK4uoYu2Fjx1a89XD_JxFbH2ktKI-Esv-d2i5rWrR5_GMigURQJkDkFBoHbDcLPz0qD4UBxwldPYWVAh6JcGsFDnL4_OxOhoBkMRv0dwAz_c7nSypLAQDLUUmIWSiqCCPX7saGZCmjJYo22NsIHNMBp_jscflCAw4ekwQNFa_6LeFcZcChp2m10EDVBYcclqhiT48"/>
+<div class="absolute bottom-6 left-6 text-white">
+<span class="bg-halsea-emerald text-white text-[10px] uppercase tracking-widest font-bold px-3 py-1 rounded-full">Signature Dish</span>
+</div>
+</div>
+<div class="col-span-1 row-span-1 overflow-hidden rounded-2xl">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" data-alt="Close up of a wooden bowl filled with white toasted Kenari nuts, a staple ingredient in North Maluku cuisine. The lighting is bright and clean against a neutral sand-colored background, highlighting the organic textures of the nuts. Corporate lifestyle travel aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYWQXmf-PRm7Q-7n_jaj_nxS7BIeXhLQsoJ3aeaAlRIrqpDIDbTY1R9I7EAw8Psw-x8WyxuPWf9HZJqRowqF9HLggo-TKoEM_hUBGleptTlWDVbd5G_R75ZGXUXkhR_FAJDZSVhR0JyZaoXmFNxAcIwmaMMi9QzIpiAVNuLRmtXt7Z7-3pzMRrtk5fBSoyh5EBN6Bv3d-jWM2NB7qS3xKeBbz6FNi7xgrJ9EFCD_8HyZv2n5QiPPT0v2imJFLgTauTLdxeo6P33Cs"/>
+</div>
+<div class="col-span-1 row-span-1 overflow-hidden rounded-2xl relative">
+<img class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" data-alt="A chef's hand skillfully slicing fresh calamansi limes on a rustic wooden board, juice spraying slightly in the air under soft morning light. The setting is an open-air Maluku kitchen with a view of the sea. Warm, inviting, and professional culinary style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDevJkvThEfMRtv5CbAChXsZmldtGxegNrkH8VvKQbFk8PApS1_wvrtkxnaUd6bGIhz3B3i9-4c6wat_2nbaBjGFOdZ7KD6LcP0GxUBUuVmFgQ_RQKcLdolTN_ddXLPGlws_8h6cFaIlQG9Ma-GCOZ5_7BNMWvcTrnezX7QBT0FcaPNhQh-Un7aue_2ZLU5U8kKLVz5019crkL2ZBiHPl7Il3OvmFWVoH0Rh-q9Hyedm1QJoPkCwy7rmXTeBBoQl3xtTzikEtpPoB0"/>
+<div class="absolute inset-0 bg-black/40 flex items-center justify-center cursor-pointer group">
+<span class="text-white font-bold text-lg group-hover:scale-110 transition-transform">+12</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar Info -->
+<aside class="lg:col-span-4 space-y-6">
+<!-- Restaurant Card -->
+<div class="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant/30">
+<h3 class="font-headline-md text-headline-md text-halsea-deepsea mb-4">Where to Eat</h3>
+<div class="flex items-center gap-4 mb-4 pb-4 border-b border-outline-variant/20">
+<div class="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="The exterior entrance of Rumah Makan Pondok Ikan in Ternate, featuring traditional Maluku architecture with modern glass windows, lush tropical plants surrounding the porch, and a sign in elegant typography. Bright sunny daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcL1Gf5NS7Vtz4C8jRme8axQPS0g06-451lEb0X3i1J09gq-D3LnitNhpFy5pC3vhNDrLMq8OCFLbWasq1HFifYKjnoGM8ecJketlUAWHP7yvRJWaecsscc0Bh5DVisIYGSqUaxJ8bjv6xQdoZQXYBBNPQ1LiacJmJRhptZWrR-WAgmlvJAa-j5hoDJEdVowaeGCxK2Qc7KfaENdS1iU1_5b2hjNe8iQyP4hzNBR5Lw4FCJHvZCysU4DvM9vBHko1Se0__Us4bjfc"/>
+</div>
+<div>
+<p class="font-bold text-body-lg">Rumah Makan Pondok Ikan</p>
+<p class="text-label-sm text-on-surface-variant flex items-center">
+<span class="material-symbols-outlined text-[16px] mr-1">schedule</span> 10:00 AM - 9:00 PM
+                            </p>
+</div>
+</div>
+<div class="space-y-3 mb-6">
+<div class="flex items-start gap-3 text-body-md">
+<span class="material-symbols-outlined text-halsea-emerald">location_on</span>
+<span class="text-on-surface-variant">Jl. Pahlawan No. 24, Ternate Tengah, North Maluku</span>
+</div>
+<div class="flex items-start gap-3 text-body-md">
+<span class="material-symbols-outlined text-halsea-emerald">call</span>
+<span class="text-on-surface-variant">+62 812-4455-9900</span>
+</div>
+</div>
+<!-- Map Placeholder -->
+<div class="w-full h-32 rounded-xl mb-6 bg-surface-container overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="A stylized minimalist map of Ternate island, North Maluku, showing the coastal roads and a marker pinpointing a culinary location. Clean modern design with Emerald and Deep Sea blue tones." data-location="Ternate, Indonesia" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_P-h2hQd5gdFZm6yiU6Dk0jHH_pbHmEy416EzfZhRf-o27onLZFkSmb5flvDL9DMx9rtZRsLI1KzCi3SKwkGfNR8wgtu36sHuNob2u3UnQa9S2sV-krHvrmBLnK-74KoKKZI4iBvIIymhegrLJeTTnXC78Wj0RbU0-VOtHJBctFH6MU-b2TW1ed1EbXlA9hsKke_UUU_SL7seo0Y8fN2nn7LqD4CVfIVmTJiNejMSrXdXKFtPtyfmv0igcJY7YjZGfyxTCy_3V7U"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="bg-white/90 px-4 py-2 rounded-full shadow-md text-label-sm font-bold text-halsea-deepsea flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-halsea-orange">location_on</span> View Map
+                            </span>
+</div>
+</div>
+<div class="grid grid-cols-1 gap-3">
+<button class="bg-halsea-orange text-white w-full py-3 rounded-xl font-bold hover:brightness-110 transition-all shadow-md">Visit Restaurant</button>
+<button class="border border-halsea-emerald text-halsea-emerald w-full py-3 rounded-xl font-bold hover:bg-halsea-emerald/5 transition-all">Book a Table</button>
+</div>
+</div>
+<!-- Traveler Tip -->
+<div class="bg-halsea-deepsea p-6 rounded-2xl text-white relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-20">
+<span class="material-symbols-outlined text-6xl">lightbulb</span>
+</div>
+<h4 class="font-bold text-body-lg mb-2 flex items-center gap-2">
+<span class="material-symbols-outlined text-halsea-orange">info</span>
+                        Traveler's Tip
+                    </h4>
+<p class="text-body-md text-white/80">For the absolute best Gohu Ikan, visit at lunchtime (11 AM - 1 PM). This is when local fishermen bring their freshest Tuna catch straight to the kitchens!</p>
+</div>
+</aside>
+</section>
+<!-- Detailed Description & Ingredients -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-20">
+<div class="lg:col-span-8">
+<div class="mb-10">
+<h2 class="font-headline-md text-headline-md text-halsea-deepsea mb-4">Story of the Fisherman's Sashimi</h2>
+<div class="prose prose-lg text-on-surface-variant font-body-md space-y-4">
+<p>Often referred to as the "Ternate Sashimi," Gohu Ikan is a testament to the raw, untamed freshness of the Maluku seas. Historically, this dish was born on the swaying decks of traditional fishing boats. Fishermen, spending days at sea, would take their freshest catch—usually Skipjack or Yellowfin Tuna—and prepare it immediately without any cooking heat.</p>
+<p>Unlike Japanese Sashimi, Gohu Ikan is a complex balance of textures and flavors. It combines the buttery richness of raw tuna with the citric snap of calamansi lime, the earthy crunch of roasted kenari nuts, and the aromatic punch of fresh basil. The addition of hot coconut oil poured over the mixture provides a subtle sear and a silky finish that binds the ingredients together.</p>
+</div>
+</div>
+<!-- Ingredients Grid -->
+<h3 class="font-headline-md text-headline-md text-halsea-deepsea mb-6">Key Ingredients</h3>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="bg-white p-6 rounded-2xl border border-outline-variant/30 flex flex-col items-center text-center group hover:border-halsea-emerald transition-colors">
+<div class="w-12 h-12 bg-halsea-emerald/10 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-halsea-emerald">set_meal</span>
+</div>
+<p class="font-bold text-halsea-deepsea">Fresh Tuna</p>
+<p class="text-label-sm text-on-surface-variant">Grade A Sashimi</p>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-outline-variant/30 flex flex-col items-center text-center group hover:border-halsea-emerald transition-colors">
+<div class="w-12 h-12 bg-halsea-emerald/10 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-halsea-emerald">nutrition</span>
+</div>
+<p class="font-bold text-halsea-deepsea">Calamansi</p>
+<p class="text-label-sm text-on-surface-variant">Pure Citrus</p>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-outline-variant/30 flex flex-col items-center text-center group hover:border-halsea-emerald transition-colors">
+<div class="w-12 h-12 bg-halsea-emerald/10 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-halsea-emerald">grain</span>
+</div>
+<p class="font-bold text-halsea-deepsea">Kenari Nuts</p>
+<p class="text-label-sm text-on-surface-variant">Roasted Crunch</p>
+</div>
+<div class="bg-white p-6 rounded-2xl border border-outline-variant/30 flex flex-col items-center text-center group hover:border-halsea-emerald transition-colors">
+<div class="w-12 h-12 bg-halsea-emerald/10 rounded-full flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-halsea-emerald">eco</span>
+</div>
+<p class="font-bold text-halsea-deepsea">Basil Leaves</p>
+<p class="text-label-sm text-on-surface-variant">Aromatic Fresh</p>
+</div>
+</div>
+</div>
+<div class="lg:col-span-4">
+<!-- Traveler Reviews -->
+<h3 class="font-headline-md text-headline-md text-halsea-deepsea mb-6">Traveler Reviews</h3>
+<div class="space-y-4">
+<div class="bg-white p-5 rounded-2xl shadow-sm border border-outline-variant/20">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young professional woman smiling, Sarah Mitchell, in a sunny outdoor setting. Modern light mode aesthetic, soft lighting, 100 word prompt style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_2nhpM2hBs7S2Y_nIDDc8YEFqTqFP_KKwKwya62NpSPj_FY_TT_DF9eNTaAQcORF9JEv7Z3lGjpoVk_YVNXkz81HQNi4gJsGLAi4wFrSr8eOU8H-kXmXk3MoRUbrY_1tSyKQRn4h2bEzW107t5d05bjRRqNLTWZx8a4G8N1Lam4rOXWOMTixbqIm-lS_fCoY27rp5pgp10mb816k8UpWsU5Fpgr89w-LmXW7pl6dHVajjmGs4u7U50ebCGrIEz57WFnB--X-lB_8"/>
+</div>
+<div>
+<p class="font-bold text-sm">Sarah Mitchell</p>
+<div class="flex text-[12px] text-halsea-orange">
+<span class="material-symbols-outlined text-[14px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<p class="text-body-md text-on-surface-variant italic">"A absolute flavor explosion! I've had sushi all over the world, but the combination of Kenari nuts and calamansi in Gohu Ikan is unlike anything else. Must try!"</p>
+</div>
+<div class="bg-white p-5 rounded-2xl shadow-sm border border-outline-variant/20">
+<div class="flex items-center gap-3 mb-3">
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of an adventurous male traveler, James Wong, wearing a linen shirt with a tropical background. High-end lifestyle photography, bright sunny lighting, natural textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBy2J1C19K1oSIrm73dF2isBBnSUqGe7niVk89KHEd7fzQcznjVLg47hVyMLw9mCRVQT3Z1C1M_HuT7kdA55InJmsg-MAq4amtlziGNxZ8ko94mwchO36lwD3pfiNnl2buYhY6-GKhVGC6WhY5kFcaV_esARPyvZ5l0-SDxcp3Kbi_y06UrphVAb5dKRDEG1GfdmBPMMoYLio_atpYZlznPnbgWhxzpH2QWY_sC8jqatjH5femcKh43Q1cywjlnhi-Eoa_7wgepan4"/>
+</div>
+<div>
+<p class="font-bold text-sm">James Wong</p>
+<div class="flex text-[12px] text-halsea-orange">
+<span class="material-symbols-outlined text-[14px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px] fill-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]">star</span>
+</div>
+</div>
+</div>
+<p class="text-body-md text-on-surface-variant italic">"The texture is incredible. The tuna is so fresh it practically melts. Great recommendation by the local guide."</p>
+</div>
+</div>
+<button class="w-full mt-6 py-2 text-halsea-deepsea font-bold text-label-md flex items-center justify-center gap-2 hover:bg-halsea-deepsea/5 rounded-xl transition-colors">
+                    Read More Reviews <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- More Flavors Grid -->
+<section class="mb-12">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline-md text-headline-md text-halsea-deepsea">More Maluku Flavors</h2>
+<p class="text-on-surface-variant">Continue your culinary journey across the Land of Kings.</p>
+</div>
+<a class="text-halsea-orange font-bold hover:underline" href="#">Explore All Culinary</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Related Dish 1 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-outline-variant/30 group hover:shadow-lg transition-all">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A bowl of Papeda Ikan Kuah Kuning, showing the translucent sago porridge served with a yellow turmeric fish soup. Professional food styling, bright tropical lighting, corporate travel aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXLtNnjCHZUm2HtjdgDcnzbLMMIGJ4Gy0nzLByK0xnvlM2IvApfikKfuvMRhtS3xm3RRkntMktOFPOUlow1gS2kRohaqt48EdDwUWxs4DxgJhJJNJAs0_z8r-luEdmitI2Vh80CIxNlXD7ilNITFFDQ2U81kFVkjt5EwEKz6zqhVsQTMQOU1-qcKH-tHshUM1mgQyMc6UIN2W1qDKAEvLbPsRZl6gWoKupyU_SlRkecb9_mfU7kmKtYXBSe0dwk2QjItwPyKq_d2M"/>
+<div class="absolute top-3 right-3 bg-white/90 px-2 py-1 rounded-lg text-[10px] font-bold text-halsea-deepsea shadow-sm">AUTHENTIC</div>
+</div>
+<div class="p-5">
+<h4 class="font-bold text-body-lg text-halsea-deepsea mb-1">Papeda Ikan Kuah Kuning</h4>
+<p class="text-label-sm text-on-surface-variant mb-4">Sago porridge with yellow soup.</p>
+<div class="flex justify-between items-center">
+<span class="text-halsea-orange font-bold text-label-md">$4.50 - $8.00</span>
+<span class="material-symbols-outlined text-on-surface-variant/40">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Related Dish 2 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-outline-variant/30 group hover:shadow-lg transition-all">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Platter of Ikan Bakar Rica, grilled fish topped with a vibrant red spicy chili paste, served on a banana leaf. Warm natural lighting, tropical colors, professional food photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSzWXOFeqLCdbvt2emoH_UVkdmf8H30qeJzkrkbJZRmtMGCNT7_U0wvuk6sUgcPj2VmEKp90F041Ur8jybAcuty2hRRg5sO9iH_gZcKS5CNy62d_wGNZfZBLThliy5bxNZb4JirEwMshDqOzQZRoUDt0LFouBcnIohI4JEPuqjqZ8IgVrdw7MVy-GJikucbYgY8wMWiPg1m4qf1DPLUdQmLx3nQK13ruc5PBluo-RPEEviw9hJQeBYEgChXA7yvKNitkT01wPVR9Q"/>
+</div>
+<div class="p-5">
+<h4 class="font-bold text-body-lg text-halsea-deepsea mb-1">Ikan Bakar Rica</h4>
+<p class="text-label-sm text-on-surface-variant mb-4">Spicy grilled fish Maluku style.</p>
+<div class="flex justify-between items-center">
+<span class="text-halsea-orange font-bold text-label-md">$6.00 - $12.00</span>
+<span class="material-symbols-outlined text-on-surface-variant/40">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Related Dish 3 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-outline-variant/30 group hover:shadow-lg transition-all">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A serving of Kohu-Kohu, a traditional Maluku salad made of shredded smoked fish, grated coconut, and vegetables. Modern clean presentation, light-mode design tokens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsKg2Vkgbcea1g8BK64YBnvO6gmzT_1CDDuE70icax8DeDCBW58re1ymMUJQ3jMPGLfTQ_U8G1WinKmm4jrMxN1zDwn-JbB7OKBHmMZxA2CvR4k3qotQ-QVAa6HGvjJxdtQXUB-N1_vUI4VtRpn06Qf3I0DpwFwSTlvSubqZ6JoI9pc8xarc_WkT9SXE_xelJWLNZnNunxHiVXnyL0dVYPvJRK_U_J0jl6ARLByovriFAVXQk-KrYhRnUi1fJbuZ1dKZ72JEe5y0A"/>
+</div>
+<div class="p-5">
+<h4 class="font-bold text-body-lg text-halsea-deepsea mb-1">Kohu-Kohu</h4>
+<p class="text-label-sm text-on-surface-variant mb-4">Smoked fish salad with coconut.</p>
+<div class="flex justify-between items-center">
+<span class="text-halsea-orange font-bold text-label-md">$3.00 - $5.00</span>
+<span class="material-symbols-outlined text-on-surface-variant/40">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Related Dish 4 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-outline-variant/30 group hover:shadow-lg transition-all">
+<div class="h-48 relative">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Stack of Sagu Lempeng, traditional hard sago crackers, being dipped into a cup of spice coffee. Cozy atmosphere, rich textures, high-end travel aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB1S6XqRmhfS7SIkFDWH_-Qy4bfaxMASwH_5mGOhxzaUBgH7yRqILk-QGk_4xoDN0UMKM5WQHnUWL1LapxuEjI_ST4Xyo-UvKSilEs5j61ygzo9mex_AKD4NeNBda7iXnt-Kk_6Yj-q2H_7_Un-FHjk8VMppUwpiDt9pkfS5uJ_eUhGSHmrW0rgu95pz1zKTc9ZPFqBUK6IqwsoOmejU1OdCcSKCLpXf7ORQErSj3XmoyeH8JvJRAomSSOx6q6Vh40nfUIWkWXpIs"/>
+</div>
+<div class="p-5">
+<h4 class="font-bold text-body-lg text-halsea-deepsea mb-1">Sagu Lempeng</h4>
+<p class="text-label-sm text-on-surface-variant mb-4">The traditional hard-sago bread.</p>
+<div class="flex justify-between items-center">
+<span class="text-halsea-orange font-bold text-label-md">$1.50 - $3.00</span>
+<span class="material-symbols-outlined text-on-surface-variant/40">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-highest dark:bg-surface-container-low w-full rounded-t-xl border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+<!-- Brand Story -->
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center mb-6">
+<img alt="Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEdkCA6kGd2elOk-PnYNSFcSsElHv-WwcI27ETc7hphI3OnDDK55m-lyYW7RXo7mQkrRgsthRpBD_gmMI5F2bNijJlYDpXmdTJIOA8667_enOX45epgU_8uJp1XJ8-47w4FCbiTCiPGvynbamM8hTbd4DbsT4oUORI2M1ELj2lMP2wGpf8tGMcUI-cNI51SBmGr_-TcvBj3er-PmEnwErPQYkoB57wuhYheUOTPubC5DzwzL-4a5Z7w9A1RR_vZrJZU7kpBxuKDDo"/>
+<span class="ml-3 text-headline-lg font-bold text-halsea-deepsea">HALSEA</span>
+</div>
+<p class="text-on-surface-variant text-body-md mb-6">Explore the Land of Kings. Halmahera Selatan offers an unparalleled journey into the heart of the spice islands, where nature meets heritage.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-halsea-deepsea text-white flex items-center justify-center hover:scale-110 transition-all shadow-md" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-halsea-deepsea text-white flex items-center justify-center hover:scale-110 transition-all shadow-md" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-halsea-deepsea text-white flex items-center justify-center hover:scale-110 transition-all shadow-md" href="#">
+<span class="material-symbols-outlined">rss_feed</span>
+</a>
+</div>
+</div>
+<!-- Links Column 1 -->
+<div class="col-span-1">
+<h5 class="text-headline-md font-bold text-halsea-deepsea mb-6">Explore</h5>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-halsea-orange hover:underline transition-all" href="#">Destinations</a></li>
+<li><a class="text-on-surface-variant hover:text-halsea-orange hover:underline transition-all" href="#">Culinary</a></li>
+<li><a class="text-on-surface-variant hover:text-halsea-orange hover:underline transition-all" href="#">Events</a></li>
+<li><a class="text-on-surface-variant hover:text-halsea-orange hover:underline transition-all" href="#">Travel Packages</a></li>
+</ul>
+</div>
+<!-- Links Column 2 -->
+<div class="col-span-1">
+<h5 class="text-headline-md font-bold text-halsea-deepsea mb-6">Support</h5>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-halsea-orange hover:underline transition-all" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-halsea-orange hover:underline transition-all" href="#">Contact Support</a></li>
+<li><a class="text-on-surface-variant hover:text-halsea-orange hover:underline transition-all" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-halsea-orange hover:underline transition-all" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div class="col-span-1">
+<h5 class="text-headline-md font-bold text-halsea-deepsea mb-6">Newsletter</h5>
+<p class="text-on-surface-variant text-body-md mb-4">Get the latest travel updates and offers from the spice islands.</p>
+<div class="flex flex-col gap-2">
+<input class="bg-surface rounded-xl border-outline-variant px-4 py-3 focus:ring-halsea-orange focus:border-halsea-orange" placeholder="Your email address" type="email"/>
+<button class="bg-halsea-deepsea text-white py-3 rounded-xl font-bold hover:bg-opacity-90 transition-all">Subscribe Now</button>
+</div>
+</div>
+</div>
+<!-- Bottom Footer -->
+<div class="border-t border-outline-variant py-6 px-margin-mobile md:px-margin-desktop text-center">
+<p class="text-label-sm text-on-surface-variant/60">© 2024 HALSEA (Halmahera Selatan). All Rights Reserved. Explore the Land of Kings.</p>
+</div>
+</footer>
+<!-- Simple Hover Interactivity -->
+<script>
+        document.querySelectorAll('button, a').forEach(elem => {
+            elem.addEventListener('mousedown', () => {
+                elem.classList.add('scale-95');
+            });
+            elem.addEventListener('mouseup', () => {
+                elem.classList.remove('scale-95');
+            });
+            elem.addEventListener('mouseleave', () => {
+                elem.classList.remove('scale-95');
+            });
+        });
+    </script>
+</body></html>

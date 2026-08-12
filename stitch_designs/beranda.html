@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HALSEA | Explore the Land of Kings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-effect {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
+        .text-shadow-premium {
+            text-shadow: 0 4px 12px rgba(13, 59, 76, 0.15);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "secondary": "#006b54",
+                      "tertiary-fixed-dim": "#e5b9dc",
+                      "on-tertiary-container": "#492a45",
+                      "on-surface-variant": "#574235",
+                      "on-primary": "#ffffff",
+                      "primary-container": "#f57c00",
+                      "on-background": "#1c1c19",
+                      "surface-dim": "#ddd9d5",
+                      "surface-container-low": "#f7f3ee",
+                      "tertiary-fixed": "#ffd7f6",
+                      "on-error": "#ffffff",
+                      "surface-container": "#f1ede8",
+                      "on-secondary-container": "#007259",
+                      "surface-container-highest": "#e6e2dd",
+                      "surface": "#fdf9f4",
+                      "on-primary-container": "#572800",
+                      "secondary-container": "#81f8d1",
+                      "outline-variant": "#dec1af",
+                      "surface-container-high": "#ebe8e3",
+                      "primary-fixed-dim": "#ffb786",
+                      "on-surface": "#1c1c19",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed-variant": "#723600",
+                      "surface-tint": "#964900",
+                      "on-tertiary-fixed": "#2d112b",
+                      "on-primary-fixed": "#311300",
+                      "primary-fixed": "#ffdcc6",
+                      "on-error-container": "#93000a",
+                      "secondary-fixed": "#81f8d1",
+                      "primary": "#964900",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed-variant": "#5d3c58",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#002117",
+                      "secondary-fixed-dim": "#63dbb6",
+                      "inverse-surface": "#31302d",
+                      "inverse-on-surface": "#f4f0eb",
+                      "outline": "#8b7263",
+                      "surface-bright": "#fdf9f4",
+                      "on-secondary-fixed-variant": "#00513e",
+                      "on-secondary": "#ffffff",
+                      "tertiary-container": "#b991b2",
+                      "background": "#fdf9f4",
+                      "tertiary": "#765371",
+                      "surface-variant": "#e6e2dd",
+                      "error": "#ba1a1a",
+                      "inverse-primary": "#ffb786"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "80px",
+                      "gutter": "24px",
+                      "base": "4px",
+                      "margin-mobile": "16px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "label-sm": ["Plus Jakarta Sans"],
+                      "label-md": ["Plus Jakarta Sans"],
+                      "headline-md": ["Plus Jakarta Sans"],
+                      "body-lg": ["Plus Jakarta Sans"],
+                      "headline-lg-mobile": ["Plus Jakarta Sans"],
+                      "headline-lg": ["Plus Jakarta Sans"],
+                      "body-md": ["Plus Jakarta Sans"],
+                      "headline-xl": ["Plus Jakarta Sans"]
+              },
+              "fontSize": {
+                      "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-xl": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Section 1: Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface/80 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold tracking-tighter text-primary">HALSEA</div>
+<!-- Desktop Links -->
+<div class="hidden lg:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Destinations</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Events</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Accommodations</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Culinary</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Travel Packages</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Interactive Map</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-4">
+<button class="p-2 hover:bg-primary/5 rounded-full transition-all">
+<span class="material-symbols-outlined text-primary">search</span>
+</button>
+<button class="hidden md:block font-label-md text-label-md text-on-surface-variant px-4 py-2 hover:bg-primary/5 rounded-lg transition-all">Sign In</button>
+<button class="bg-primary-container text-on-primary font-bold px-6 py-2 rounded-xl shadow-md hover:scale-105 active:scale-95 transition-all">Register</button>
+</div>
+</div>
+</nav>
+<!-- Section 2: Hero Section -->
+<header class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, wide-angle shot of the breathtaking Halmahera landscape featuring turquoise coastal waters and lush volcanic islands under a bright golden hour sun. The lighting is warm and ethereal, highlighting the pristine white sand beaches and dense emerald green forests. The overall aesthetic is premium travel photography with high contrast and vibrant tropical colors, evoking a sense of tranquil discovery." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB0vHInxTTLqlm7XL7gTpwV3EV6x-FCQ1Eznn3wytmGUgAnCIgWZr7RYXIEE-Yz2ypKYtkYzhGz4vF-k977WWNmtTIgGRT3M9GqxXjAFKYguooRv7w54gdEtd0Gbp-K9vmpVASV7mH0etyCe4udZYRqQyCpzfj4-xGBJHeYOTcIpjk3sviPps88PbJDK-XEF2FBVe0EafNkaFMhTC22XJCxxC0S3QJZXnLTwZXx7F9C-bJzUPGDLVpPKMZ2tgiKgx6wEdd5FMPkmSY')"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/40 to-transparent"></div>
+</div>
+<div class="relative z-10 px-margin-mobile md:px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="max-w-2xl">
+<h1 class="font-headline-xl text-headline-xl text-primary mb-6 animate-fade-in leading-tight">Explore the Beauty of <br/><span class="text-secondary">South Halmahera</span></h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">Discover the hidden gems of the "Land of Kings." From crystal clear waters to ancient historical sites, your journey of a lifetime starts here.</p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-primary-container text-on-primary font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-primary-container/20 hover:translate-y-[-2px] transition-all">Explore Destinations</button>
+<button class="bg-white border-2 border-secondary text-secondary font-bold px-8 py-4 rounded-xl hover:bg-secondary/5 transition-all">View Travel Packages</button>
+</div>
+</div>
+</div>
+</header>
+<!-- Section 3: Tourism Categories -->
+<section class="py-24 bg-surface-container-low">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-12">
+<div>
+<h2 class="font-headline-lg text-headline-lg text-primary mb-2">Adventure Awaits</h2>
+<p class="text-on-surface-variant font-body-md">Choose your preferred way to experience Halsea</p>
+</div>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+<!-- Categories -->
+<div class="group bg-white p-8 rounded-2xl border border-outline-variant hover:border-primary transition-all text-center cursor-pointer hover:shadow-xl hover:translate-y-[-8px]">
+<div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-white">beach_access</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Beaches</span>
+</div>
+<div class="group bg-white p-8 rounded-2xl border border-outline-variant hover:border-primary transition-all text-center cursor-pointer hover:shadow-xl hover:translate-y-[-8px]">
+<div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-white">blind</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Islands</span>
+</div>
+<div class="group bg-white p-8 rounded-2xl border border-outline-variant hover:border-primary transition-all text-center cursor-pointer hover:shadow-xl hover:translate-y-[-8px]">
+<div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-white">castle</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Historical Sites</span>
+</div>
+<div class="group bg-white p-8 rounded-2xl border border-outline-variant hover:border-primary transition-all text-center cursor-pointer hover:shadow-xl hover:translate-y-[-8px]">
+<div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-white">forest</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Nature</span>
+</div>
+<div class="group bg-white p-8 rounded-2xl border border-outline-variant hover:border-primary transition-all text-center cursor-pointer hover:shadow-xl hover:translate-y-[-8px]">
+<div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-white">theater_comedy</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Culture</span>
+</div>
+<div class="group bg-white p-8 rounded-2xl border border-outline-variant hover:border-primary transition-all text-center cursor-pointer hover:shadow-xl hover:translate-y-[-8px]">
+<div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary transition-colors">
+<span class="material-symbols-outlined text-secondary group-hover:text-white">waterfall_chart</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Waterfalls</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Popular Destinations -->
+<section class="py-24">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12">Popular Destinations</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="group relative h-[450px] rounded-2xl overflow-hidden cursor-pointer shadow-lg">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A stunning aerial view of Nusara Island in South Halmahera, showing vibrant coral reefs visible through translucent turquoise waters. The island is draped in dense tropical foliage with a tiny white sand beach on one side. The lighting is bright and summery, emphasizing the natural colors of the Deep Sea navy and Emerald green waters." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDDbHYTNYvfGvWqTdVws94fYVFi_73fYah3_qUn7co0A2r3tZGNiDtpqckFfyDH4pwcmBjHQTvuyngORbPOcB0qw8WwWQAz63CgXOvMERLdIZVsom8iq8bZbrg4cAyhJmpSnwshZJ1Qqqw5Bak7vJrHV7a4_9Q58tHYpOWVLvYXBm3xqxPUiF_l7twkxaVEl9NTgmMXIjFCRtS3DwaIPYZ9XvM7jT0cpctVuZFktlemYnm77ifHg6iurLM1LIzyxvi8g95soRGuylc')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="bg-secondary text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-wider mb-2 inline-block">Nature</span>
+<h3 class="text-white font-headline-md text-headline-md mb-2">Nusara Island</h3>
+<div class="flex items-center text-white/80 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span> South Halmahera
+                        </div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group relative h-[450px] rounded-2xl overflow-hidden cursor-pointer shadow-lg mt-8 lg:mt-0">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="The majestic panoramic view of the Labuha coastline in South Halmahera, showcasing the historical Bernaveld Fort against a backdrop of rolling green hills. The lighting is warm and soft, casting long shadows that highlight the colonial architecture. The atmosphere is peaceful and historical, capturing the essence of the 'Land of Kings'." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBLJDxeUQ7anHn-y_VYV98mw10_yCCdalF_toNfD_MxCNTUhDbpNb2hCVfH5QzO_IJdsfzwYkFGaCwdjWsWHK00OkHT5JKKWHDoqEPlcRhOQ_iwVAF4vgPc0xLr7JJ30roPOiUcwRh9ji81NcfCyv-WvN51AUM7UJZbhgOO2Zw6QC_oiSCv0qiiE06yZ6uM8elpa2fhIIHl6N_N0MHFWSyq_nEtUDgMIsWryqVWP-VrC5Jayy4d9iGOVrQNNaxSd6Z7WhdNtvnluMk')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="bg-tertiary text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-wider mb-2 inline-block">Historical</span>
+<h3 class="text-white font-headline-md text-headline-md mb-2">Bernaveld Fort</h3>
+<div class="flex items-center text-white/80 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span> Labuha City
+                        </div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group relative h-[450px] rounded-2xl overflow-hidden cursor-pointer shadow-lg">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A close-up high-definition shot of a professional diver exploring the vibrant underwater world of the Guraici Islands. Colorful corals in orange and purple hues fill the frame, surrounded by schools of tropical fish in the clear blue water. Sunlight filters down in shimmering rays, creating a magical, dreamlike diving experience." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA1KHdnIh9ePBishZhwrocyjvL1jN3xC8cu9X_Xq5yRVEAazf8tiiVDJ7_-q43XXw2xIJ8P5HW6FWtnpdsLUGsRjzjzG5HAqoUfKAANUz7FtoVJmPXLSFAv0BczBrfmzp5FALYpSPvnpV9WFf1tKudJPqDX6j0mZ2vtWHEbBBZjpIhX_IrFLClBd3KTP7BdtWwqzy7Tr7d7RtwRhaLurg72V7ZhRyJ1HPyqRgCcTaKg0WpwpMPFnjtI7t-WIZgSWE1tEjdngz1Utuw')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="bg-secondary text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-wider mb-2 inline-block">Diving</span>
+<h3 class="text-white font-headline-md text-headline-md mb-2">Guraici Archipelago</h3>
+<div class="flex items-center text-white/80 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span> Bacan District
+                        </div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="group relative h-[450px] rounded-2xl overflow-hidden cursor-pointer shadow-lg mt-8 lg:mt-0">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="The dramatic Bibinoi Waterfall in South Halmahera, where powerful white water cascades down a dark volcanic rock face into a crystal clear pool below. The surrounding jungle is a lush, deep emerald green with mist hanging in the air. The lighting is moody and natural, emphasizing the raw power and beauty of the waterfall." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDqOuZB8P3iqreXO1CDJjzM33bEJCjCRpirggl3KQIRXICrZNk1UuJiqzclUnzd6u98iRoivrZDTqFmJNs42QKEr6o22HWZ4iXBBd_nEHjVWHXkJDj_aXdNAi5u_TiNoP3dvCbLhEHbhheAQJc8cRE4nxHJm91k1N3BW59TC1GB9gYGTxgyUGUk9SBQxGEeDyRvt_lbB-7HvKP6cWcPKSQ5vWMAy1Izt_MFSkvVYPQVCL9Z8r_qNbGylaMOd7_VIcVp5CdG2RJrA6I')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6">
+<span class="bg-secondary text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-wider mb-2 inline-block">Adventure</span>
+<h3 class="text-white font-headline-md text-headline-md mb-2">Bibinoi Waterfall</h3>
+<div class="flex items-center text-white/80 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-sm mr-1">location_on</span> South Bacan
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Upcoming Events -->
+<section class="py-24 bg-surface-container">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="flex items-center justify-between mb-12">
+<h2 class="font-headline-lg text-headline-lg text-primary">Upcoming Events</h2>
+<button class="text-secondary font-bold hover:underline flex items-center">View All Events <span class="material-symbols-outlined ml-1">arrow_forward</span></button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Event 1 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+<div class="h-48 bg-cover bg-center" data-alt="A vibrant and energetic scene from the Festival Bacan in South Halmahera, with traditional dancers in ornate, colorful costumes performing on a stage. The background shows a bustling crowd and local decorations. The lighting is bright and festive, capturing the joy and cultural richness of the region's people." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA9_8LtCHs463xSzsTg-MwSipXUDKjtnPl61WAvtxBjNc1cfoT0qfiIPQBfsZKUiUYf4Ih_JrD9WKDoQxNR-nmvdBoIAAbXBUv6AgKT36p2LAJ5KxdkOoCSGvmVcOvb9lQ-v54_y3kDSsPiFL5mcJiRl5i4zUCn8xT1MblgA_DYiq8o9T7fTdAvrhl3C9ieby4f1j8prGZGDGOKoExEdvsVvV0ysoUfJVFd4dDNncEgI4SdlBtYclFEPJAC7LTo_BqLYtu9Fb4XVYU')"></div>
+<div class="p-6">
+<div class="text-primary font-bold text-label-sm mb-2">OCT 15 - 20, 2024</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Festival Bacan 2024</h3>
+<p class="text-on-surface-variant font-body-md mb-4">Celebrating the royal heritage and natural wonders of the Bacan Sultanate.</p>
+<button class="text-primary font-bold hover:gap-2 transition-all flex items-center">Learn More <span class="material-symbols-outlined ml-2">east</span></button>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+<div class="h-48 bg-cover bg-center" data-alt="An action-packed shot from the Halmahera Marine Expo, featuring sailboats racing across a sparkling blue sea under a clear sky. The shoreline is lined with exhibitor tents and enthusiastic spectators. The mood is high-energy and modern, focusing on marine innovation and regional maritime pride." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCtCkBnEHuMHTPr34q_cVCD3rbPIs8YuSYJnP96ITJGpgk3xcI1M20sm_3WrEYoiOJHCQ7geoheAdWdyyxPucrao-bjFSKeLKO0VEmVfFTzOYbP6JSJhG7vqg1kUx-bU3FuOLqpbVkB-vxXMv_OwEuY-I6olhu-NDKBUZo2dOV32nqrzqXbOCU_el5KKzMezK7PyA9IMOYxHaB9PYSVhk-Naz9yhGJWGHMJjvJ46lsMz7Ix-LYptelgleapTyG-ozv9Wn2HxB_zsoE')"></div>
+<div class="p-6">
+<div class="text-primary font-bold text-label-sm mb-2">NOV 12, 2024</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Halmahera Marine Expo</h3>
+<p class="text-on-surface-variant font-body-md mb-4">A showcase of regional maritime culture, underwater technology, and diving spots.</p>
+<button class="text-primary font-bold hover:gap-2 transition-all flex items-center">Learn More <span class="material-symbols-outlined ml-2">east</span></button>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-all">
+<div class="h-48 bg-cover bg-center" data-alt="A beautiful sunset culinary festival scene on a beach in Halmahera, with stalls serving traditional dishes like grilled fish and local delicacies. Warm lanterns illuminate the area as people enjoy their food with the ocean in the background. The lighting is golden and inviting, emphasizing the rich culinary traditions of the area." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAe17wlRvvKoln7408IzFKdIlgkMbfSYl_CFk-i6q6tyuifZ_B2ZKN-dYKr4Gx7NimndiGL_RJ0Dqm9u9UtGmQoUkWw7hRh36sZcZW7ZL-DksLf84fBkP_es2IfR_aDTQ1NjQA3LZjNh1Ue6Xjd6pQ19-jD1aaRPIkO_cdA2mltVFOOrfiID9PCfUR9EwEcuUKPB1Htf0dEDaXDDdCnSK-ILWyOVNJZzqZKlCbJ7SLl8ERXkIbO-o49eLHn9qfx1uOfv8dMXGGC9a4')"></div>
+<div class="p-6">
+<div class="text-primary font-bold text-label-sm mb-2">DEC 05, 2024</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3">Culinary Heritage Week</h3>
+<p class="text-on-surface-variant font-body-md mb-4">Taste the authentic flavors of South Halmahera, from land to sea.</p>
+<button class="text-primary font-bold hover:gap-2 transition-all flex items-center">Learn More <span class="material-symbols-outlined ml-2">east</span></button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Recommended Travel Packages -->
+<section class="py-24">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12 text-center">Curated Travel Packages</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Package 1 -->
+<div class="group bg-white rounded-3xl p-4 shadow-sm border border-outline-variant hover:shadow-2xl transition-all">
+<div class="h-64 rounded-2xl bg-cover bg-center mb-6 overflow-hidden" data-alt="A high-end travel lifestyle photo showing a luxury wooden boat anchored in a secluded turquoise bay. Two travelers are seen snorkeling in the foreground. The aesthetic is clean and premium, with a palette of soft whites, sand, and emerald greens. The mood is one of exclusive adventure and serene relaxation." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCPnLiCW-UA3D1ZI_8-kyexRHYqlYjBqh-lh6Gr4zuShRwopZOA7OpFiXLTNhw8vwQCAhTfIWCEnd0YXGXf8qARYj0jOGl7oe722jy7i4oZhPTaaJPQvmBMqQhLXMnH56WHNvqPGqb2VOdbuDoxaWjGWUt2ZXYM5XeLZandmnigxy3LOof6HyGQBnI6ErRuBt4FJpMGKehBwpk1LcBlpm1JI7rOkhOYV9STtyMwSZ3lLcjG-8YiaybjFqvloKkVshw1CR_4KwditUo')"></div>
+<div class="px-4 pb-4">
+<div class="flex justify-between items-center mb-4">
+<span class="text-secondary font-bold text-label-md">3 Days / 2 Nights</span>
+<div class="flex items-center gap-1 text-primary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-label-md">4.9</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Bacan Island Paradise</h3>
+<p class="text-on-surface-variant font-body-md mb-6">Complete tour of historical sites and pristine beaches in Bacan Island.</p>
+<div class="flex items-center justify-between">
+<div class="text-primary font-bold text-headline-md">$249<span class="text-sm font-normal text-on-surface-variant">/pax</span></div>
+<button class="bg-secondary text-white px-6 py-2 rounded-xl font-bold hover:bg-secondary/90">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Package 2 -->
+<div class="group bg-white rounded-3xl p-4 shadow-sm border border-outline-variant hover:shadow-2xl transition-all">
+<div class="h-64 rounded-2xl bg-cover bg-center mb-6 overflow-hidden" data-alt="A macro shot of a vibrant sea turtle swimming over a kaleidoscopic coral reef in the Guraici Islands. The water is exceptionally clear, and the lighting is bright and natural. The colors are highly saturated, focusing on the deep blues of the ocean and the neon hues of the reef, conveying an immersive underwater experience." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDtSqE4Z8V7BwJFVC08XrxNzBQSYeYEJoARRyocDv83X6_3h58hXn0Y_SHP27usjJJOh3BiE8u1661hEQ4MM1qpypQiOUHZLCpvoEXrSI0_XE3FEHka_qrieVZLi9T0runBkopEEtSJJK7NFQuGvWJpolU--C0MDZUIu0_tCt2-lJMwk7ylXA5mqEdvKAwz2JNDY1lr3NFkvvUR6v7jAofAVWNEIgRrb0MNetqfc-mtSrJ7xlkzazWwXIvZDwgb0Tu55ffR5jF1X4E')"></div>
+<div class="px-4 pb-4">
+<div class="flex justify-between items-center mb-4">
+<span class="text-secondary font-bold text-label-md">5 Days / 4 Nights</span>
+<div class="flex items-center gap-1 text-primary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-label-md">5.0</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Guraici Diving Quest</h3>
+<p class="text-on-surface-variant font-body-md mb-6">An immersive diving experience for professionals and enthusiasts alike.</p>
+<div class="flex items-center justify-between">
+<div class="text-primary font-bold text-headline-md">$499<span class="text-sm font-normal text-on-surface-variant">/pax</span></div>
+<button class="bg-secondary text-white px-6 py-2 rounded-xl font-bold hover:bg-secondary/90">Book Now</button>
+</div>
+</div>
+</div>
+<!-- Package 3 -->
+<div class="group bg-white rounded-3xl p-4 shadow-sm border border-outline-variant hover:shadow-2xl transition-all">
+<div class="h-64 rounded-2xl bg-cover bg-center mb-6 overflow-hidden" data-alt="A romantic scene of a private candlelit dinner on a white sand beach at dusk. The sky is painted in shades of purple and orange, and the calm sea reflects the twilight. The aesthetic is sophisticated and tactile, emphasizing high-end hospitality and the natural beauty of the South Halmahera coastline." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAeKBksWTXxQbY88MAuTfWhWSejiJMnWSOwr839TJkB8Nl1uKhiJiTk_zCJ_hVnkl1eO9i_VXMbsepOjcZQnnMRXOOSaL4z_3wpxiFfKYbJBn1amFvZyslkPDG3ghaqOIukzOTN4_wJlo715mqPl6D9o_BVSkDnteXwn7Wr5CGObkNlehW5HK59UktFEyhIc8FmcePdpIERpxH8MSq0CaLoLkwxWml2Ra7Z2_9_IobuyfAUSbgK7I9OiYN8lDT5pqOD2v908-JGpW4')"></div>
+<div class="px-4 pb-4">
+<div class="flex justify-between items-center mb-4">
+<span class="text-secondary font-bold text-label-md">4 Days / 3 Nights</span>
+<div class="flex items-center gap-1 text-primary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-label-md">4.8</span>
+</div>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Hidden Lagoon Retreat</h3>
+<p class="text-on-surface-variant font-body-md mb-6">Relax in luxury at the most secluded and private lagoons in Halsea.</p>
+<div class="flex items-center justify-between">
+<div class="text-primary font-bold text-headline-md">$385<span class="text-sm font-normal text-on-surface-variant">/pax</span></div>
+<button class="bg-secondary text-white px-6 py-2 rounded-xl font-bold hover:bg-secondary/90">Book Now</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Interactive Map Preview -->
+<section class="py-24 bg-surface-container-high relative overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-4">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-6">Explore the <br/>Interactive Map</h2>
+<p class="text-on-surface-variant mb-8">Plan your route across the archipelago with our detailed interactive guide. Filter by category to find exactly what you're looking for.</p>
+<!-- Filters -->
+<div class="space-y-3 mb-8">
+<div class="flex items-center p-3 bg-white rounded-xl border border-outline-variant cursor-pointer hover:border-secondary transition-all">
+<div class="w-8 h-8 bg-secondary/10 rounded-lg flex items-center justify-center mr-3">
+<span class="material-symbols-outlined text-secondary text-lg">beach_access</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Coastlines &amp; Beaches</span>
+</div>
+<div class="flex items-center p-3 bg-white rounded-xl border border-outline-variant cursor-pointer hover:border-secondary transition-all">
+<div class="w-8 h-8 bg-tertiary/10 rounded-lg flex items-center justify-center mr-3">
+<span class="material-symbols-outlined text-tertiary text-lg">castle</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Historical Markers</span>
+</div>
+<div class="flex items-center p-3 bg-white rounded-xl border border-outline-variant cursor-pointer hover:border-secondary transition-all">
+<div class="w-8 h-8 bg-primary/10 rounded-lg flex items-center justify-center mr-3">
+<span class="material-symbols-outlined text-primary text-lg">restaurant</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Culinary Hotspots</span>
+</div>
+</div>
+<button class="w-full bg-primary-container text-on-primary font-bold py-4 rounded-xl shadow-md">Open Full Map</button>
+</div>
+<div class="lg:col-span-8 relative">
+<div class="bg-white p-4 rounded-3xl shadow-2xl border border-outline-variant aspect-[16/10] overflow-hidden group">
+<div class="w-full h-full rounded-2xl overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="A professional digital cartography map of South Halmahera, styled with the Halsea Harmony brand palette. The map uses a soft Sand background for land and Deep Sea navy for water. Interactive pins in Emerald and Orange mark key tourist destinations like Bacan and Obi islands. The lighting is clean and flat, with a modern, high-fidelity UI aesthetic." data-location="South Halmahera" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDWohnOyJNWel5WitGIBpmYMy9GYkOWFON2c6KlPW2bUJT8KfHnOh-GC2tMTqAeKBnGgGal0uqijL5f1yYNq1pEPUdX096vDaDBUvqajn6fRLD7ydeNe6x4TmYxYXYNzq0r5zPZw42fLrXJhjSMluuBDlPX7ScAaO5vL0IyU2GRKIECuS0KJ_3QIi59Pw457q84iaJ-zZ_bDW-VJy-36xf5WclI0vrMOPEbcWaRWw41sU0d7wLO2SpjRMD9npGI6Y3atAgptSDmD0"/>
+<div class="absolute inset-0 bg-secondary/5 group-hover:bg-transparent transition-all duration-500"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 8: Culinary Highlights -->
+<section class="py-24">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-4">A Taste of the Islands</h2>
+<p class="text-on-surface-variant">Authentic South Halmahera flavors you shouldn't miss</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Food Item -->
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-2xl overflow-hidden mb-4 relative">
+<div class="w-full h-full bg-cover bg-center transition-transform group-hover:scale-110" data-alt="A beautifully presented plate of traditional Halmahera grilled fish (Ikan Bakar) served with authentic sambal and fresh lime. The setting is a rustic but upscale seaside restaurant with natural lighting and soft shadows. The food looks appetizing and fresh, with a focus on vibrant colors and organic textures." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDwOFU-6H72TxLIkz72MkjRJaeQl7eYDscAKgosm42wX3tu881yEI55UWfcziAmpFlQCo99zgJ_7GWOk6H9AJvXLmyo6TfqMnhhKignL3agt9WjaAzG1gFd7Zowczvb2EcPQkMIm50-2JDGcxJ2LS5OX_twdduleYHRvAxoWLBm2pXhU6g3dBTkYanJTeZvfNC3sPk1JGYvJLMZAP1RmtY79tAZqMGeKPPhyx4amdcuEvz-b3Jo3sOHvL_l81D-GhqnyqBRhGzIAL8')"></div>
+<div class="absolute top-4 right-4 bg-white/90 glass-effect px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] font-bold text-on-surface">4.9</span>
+</div>
+</div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-1 group-hover:text-primary transition-colors">Ikan Bakar Rica</h3>
+<p class="text-on-surface-variant text-label-md mb-3">Authentic spicy grilled fish with local spices.</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-2xl overflow-hidden mb-4 relative">
+<div class="w-full h-full bg-cover bg-center transition-transform group-hover:scale-110" data-alt="A detailed shot of Papeda, a traditional sago congee, served in a wooden bowl with yellow fish soup. The steam rises gently from the dish, and the lighting is warm and natural. The colors are earthy and rich, showcasing the rustic and authentic culinary heritage of the Land of Kings." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAzE1Yk0qZKyswUjqwoe3LSVC5jfrNqQE0U2DP7eo5N-tWX_Z3cY9SHX2alskJpf7fqJ09SPsCAjUec8MUnxjAvnjkECYkANISYe9Q-mAz1YKtIa4vD4agU84UwQV07TBr9mXd9ZkrQmiAsWT2Z1kFmHeaRKALbCHTYYVnaWTxR7qlwCLw9qscEOQw8HiJch39mR-HjHbVyGsq0sIPJPKcTyH5N7VrxNrySCUj7Kmo65DtRXJc_Am62zXesAFR70oTrs2SF_tiS8Pw')"></div>
+<div class="absolute top-4 right-4 bg-white/90 glass-effect px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] font-bold text-on-surface">4.7</span>
+</div>
+</div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-1 group-hover:text-primary transition-colors">Papeda Kuah Kuning</h3>
+<p class="text-on-surface-variant text-label-md mb-3">Traditional sago dish served with savory yellow soup.</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-2xl overflow-hidden mb-4 relative">
+<div class="w-full h-full bg-cover bg-center transition-transform group-hover:scale-110" data-alt="A high-key commercial shot of traditional Halmahera snacks like Bagea cookies and Halua Kenari, artfully arranged on a minimalist white ceramic plate. The lighting is soft and bright, highlighting the crisp textures and natural ingredients. The overall style is clean, modern, and high-end." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAc3u41lEiVgJuE8eNC8F2DDAcDSuyay3iLjd6A6h3vjZ_Lev-RFZeRqIiCJAp6lIn6EN9qiqmRF4Ykpkv-7ojKoKR-iEmyGoO2lA62ehInQ_v-OrRcrippYnlu2vYddGCpTKy_tzfx0C2_Ow1bTHI0pALaLAGYg-6LE6wfG0c3-57Z2gVDRsHaWarcKn0HjXYzeZa5IodRf7g7nJYccZjKpdJ7lWcA3r_XJA3gJ7iY6tW-cGa_i41EA26Ktl0FZ04TW4uSMaay8Ik')"></div>
+<div class="absolute top-4 right-4 bg-white/90 glass-effect px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] font-bold text-on-surface">4.8</span>
+</div>
+</div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-1 group-hover:text-primary transition-colors">Bagea &amp; Halua</h3>
+<p class="text-on-surface-variant text-label-md mb-3">Signature sweet treats made with sago and canary nuts.</p>
+</div>
+<div class="group cursor-pointer">
+<div class="aspect-square rounded-2xl overflow-hidden mb-4 relative">
+<div class="w-full h-full bg-cover bg-center transition-transform group-hover:scale-110" data-alt="A refreshing and colorful shot of a local fruit platter featuring exotic Halmahera fruits like durian and rambutan, served fresh on a tropical leaf. The morning sunlight creates a bright, energetic mood with vibrant reds and greens. The image conveys a sense of abundance and tropical freshness." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBFDhNff_L-abLCrVLXazvaOaiXpifZFXV7UCEE9QlGsk_m7BWe07yEBKjkaBjFmGTgr3KdH7W0VEK5HE_DXmvj_lYIsxOQeVAdGdQP4y12X4dx9jNBWeX80TIySPM3QeMOnmX-bLO46NAB0BtaH63-UXMA1v8PeQWJst2mO_1-lCf0RdksrjZEoi9HsVF7O-bIfEO2gzbaAYi0gpPd48mSlTlFNcEFZ_GKighrMv3K6XPyXUnuUdEYfIoBSQdZy_7waP9pSFVSfdY')"></div>
+<div class="absolute top-4 right-4 bg-white/90 glass-effect px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="text-[10px] font-bold text-on-surface">4.9</span>
+</div>
+</div>
+<h3 class="font-headline-md text-[20px] text-on-surface mb-1 group-hover:text-primary transition-colors">Tropical Fruit Medley</h3>
+<p class="text-on-surface-variant text-label-md mb-3">Fresh exotic fruits harvested daily from local farms.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 9: Recommended Accommodations -->
+<section class="py-24 bg-surface-container-low">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-primary mb-12">Where to Stay</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Accommodation 1 -->
+<div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-outline-variant flex flex-col h-full">
+<div class="h-64 bg-cover bg-center" data-alt="An exterior shot of a luxury eco-resort villa in South Halmahera, built with sustainable wood and overlooking a private bay. The architecture is modern yet organic, seamlessly blending with the tropical landscape. The lighting is soft morning light, and the mood is one of tranquil exclusivity and high-end comfort." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDFjO5jdOMeB3AHhfZweuueo3b9tK86vtdKfRo7iGvJHoXyoXGD5HTC0CJ6rSODAg5iyHt6ouMyc2R7Jzm9szEZtJ7hZcTrPrQppw7PctbgKqE9bVgI3oBWzY7ATPjSyHfy3DOyDFBjm-4ViBu517gq053h4pu7-VSLLicqZV1SLfuEFNm4dJbPpitAfCQqQAyMBd4jYqyDLHMjvQfsRSPCZkqdebi_qmZ2GgV5cyZfq60W9x4QF0mnLVb-tNm88aJc89dRB6zMLkk')"></div>
+<div class="p-8 flex flex-col flex-grow">
+<div class="flex items-center gap-2 mb-3">
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-[10px] font-bold uppercase">Eco Resort</span>
+<div class="flex text-primary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div></div></div></div></div></div></section><section class="py-16 bg-surface-container border-t border-outline-variant">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<div class="inline-flex flex-col items-center">
+<span class="material-symbols-outlined text-primary text-headline-lg mb-4">group</span>
+<h2 class="font-headline-xl text-headline-xl text-primary tracking-tighter mb-2">1,245,678</h2>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-widest">Total Website Visitors</p>
+</div>
+</div>
+</section><footer class="bg-surface-container-highest border-t border-outline-variant rounded-t-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<div class="text-headline-lg font-headline-lg text-primary">HALSEA</div>
+<p class="text-on-surface-variant font-body-md">Explore the Land of Kings. Discover the hidden gems of South Halmahera.</p>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Explore</h4>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Destinations</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Events</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Legal</h4>
+<ul class="space-y-3">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Contact Support</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Newsletter</h4>
+<p class="text-on-surface-variant font-body-md mb-4">Stay updated with the latest travel packages and events.</p>
+<div class="flex gap-2">
+<input class="bg-surface border border-outline-variant rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-primary/20 outline-none" placeholder="Your email" type="email"/>
+<button class="bg-primary text-white px-4 py-2 rounded-lg font-bold hover:bg-primary/90 transition-all">Join</button>
+</div>
+</div>
+</div>
+<div class="border-t border-outline-variant py-8 text-center">
+<p class="text-on-surface-variant font-label-md">© 2024 HALSEA (Halmahera Selatan). All Rights Reserved. Explore the Land of Kings.</p>
+</div>
+</footer></body></html>

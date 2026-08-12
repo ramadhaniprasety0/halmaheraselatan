@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Explore Destinations | HALSEA - Land of Kings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary": "#006b54",
+                        "tertiary-fixed-dim": "#e5b9dc",
+                        "on-tertiary-container": "#492a45",
+                        "on-surface-variant": "#574235",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#f57c00",
+                        "on-background": "#1c1c19",
+                        "surface-dim": "#ddd9d5",
+                        "surface-container-low": "#f7f3ee",
+                        "tertiary-fixed": "#ffd7f6",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f1ede8",
+                        "on-secondary-container": "#007259",
+                        "surface-container-highest": "#e6e2dd",
+                        "surface": "#fdf9f4",
+                        "on-primary-container": "#572800",
+                        "secondary-container": "#81f8d1",
+                        "outline-variant": "#dec1af",
+                        "surface-container-high": "#ebe8e3",
+                        "primary-fixed-dim": "#ffb786",
+                        "on-surface": "#1c1c19",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#723600",
+                        "surface-tint": "#964900",
+                        "on-tertiary-fixed": "#2d112b",
+                        "on-primary-fixed": "#311300",
+                        "primary-fixed": "#ffdcc6",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#81f8d1",
+                        "primary": "#964900",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed-variant": "#5d3c58",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed": "#002117",
+                        "secondary-fixed-dim": "#63dbb6",
+                        "inverse-surface": "#31302d",
+                        "inverse-on-surface": "#f4f0eb",
+                        "outline": "#8b7263",
+                        "surface-bright": "#fdf9f4",
+                        "on-secondary-fixed-variant": "#00513e",
+                        "on-secondary": "#ffffff",
+                        "tertiary-container": "#b991b2",
+                        "background": "#fdf9f4",
+                        "tertiary": "#765371",
+                        "surface-variant": "#e6e2dd",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#ffb786"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "gutter": "24px",
+                        "base": "4px",
+                        "margin-mobile": "16px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Plus Jakarta Sans"],
+                        "label-md": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "headline-lg-mobile": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-xl": ["48px", {"lineHeight": "60px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fdf9f4; /* Theme Surface */
+            color: #1c1c19; /* Theme On-Surface */
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-header {
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .text-shadow-sm {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            height: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1ede8;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #964900;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body class="bg-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 glass-header shadow-sm">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="text-headline-md font-headline-md font-bold tracking-tighter text-primary" href="#">HALSEA</a>
+<div class="hidden md:flex gap-6">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Home</a>
+<a class="font-label-md text-label-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Destinations</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Events</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Accommodations</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block font-label-md text-label-md px-4 py-2 text-on-surface-variant hover:bg-primary/5 transition-all rounded-xl">Sign In</button>
+<button class="font-label-md text-label-md px-6 py-2.5 bg-primary-container text-on-primary-container rounded-xl font-bold shadow-sm hover:scale-[0.98] transition-transform">Register</button>
+</div>
+</nav>
+</header>
+<main class="pt-24 pb-20">
+<!-- Breadcrumbs & Header -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-8">
+<nav class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm mb-4">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-semibold">Destinations</span>
+</nav>
+<div class="max-w-3xl">
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-4 leading-tight">Explore Destinations</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    Uncover the hidden gems of Halmahera Selatan. From pristine coral reefs and white sand beaches to historic spice route forts and lush tropical peaks, your journey through the Land of Kings begins here.
+                </p>
+</div>
+</section>
+<!-- Search & Filters -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-12">
+<div class="bg-white p-6 rounded-2xl shadow-[0_4px_30px_rgba(0,107,84,0.04)] border border-outline-variant/30 flex flex-col md:flex-row gap-4 items-center">
+<div class="w-full md:flex-1 relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-3 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-body-md font-body-md" placeholder="Search for island, beach, or historic site..." type="text"/>
+</div>
+<div class="flex flex-wrap md:flex-nowrap gap-3 w-full md:w-auto">
+<select class="flex-1 md:w-40 py-3 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-label-md font-label-md">
+<option>Location</option>
+<option>Bacan Island</option>
+<option>Obi Island</option>
+<option>Makian Island</option>
+</select>
+<select class="flex-1 md:w-40 py-3 bg-surface-container-low border-none rounded-xl focus:ring-2 focus:ring-primary/20 text-label-md font-label-md">
+<option>Rating</option>
+<option>4.5+ Stars</option>
+<option>4.0+ Stars</option>
+</select>
+<button class="w-full md:w-auto px-6 py-3 bg-secondary text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-secondary/90 transition-colors">
+<span class="material-symbols-outlined">tune</span>
+                        Filters
+                    </button>
+</div>
+</div>
+<!-- Category Chips -->
+<div class="flex gap-3 mt-6 overflow-x-auto pb-2 custom-scrollbar">
+<button class="whitespace-nowrap px-6 py-2.5 bg-primary text-white rounded-full font-label-md text-label-md">All Destinations</button>
+<button class="whitespace-nowrap px-6 py-2.5 bg-secondary/10 text-secondary border border-secondary/20 rounded-full font-label-md text-label-md hover:bg-secondary/20 transition-all">Pristine Beaches</button>
+<button class="whitespace-nowrap px-6 py-2.5 bg-tertiary/10 text-tertiary border border-tertiary/20 rounded-full font-label-md text-label-md hover:bg-tertiary/20 transition-all">Diving &amp; Snorkeling</button>
+<button class="whitespace-nowrap px-6 py-2.5 bg-secondary/10 text-secondary border border-secondary/20 rounded-full font-label-md text-label-md hover:bg-secondary/20 transition-all">Cultural Heritage</button>
+<button class="whitespace-nowrap px-6 py-2.5 bg-primary/10 text-primary border border-primary/20 rounded-full font-label-md text-label-md hover:bg-primary/20 transition-all">Rainforest Treks</button>
+<button class="whitespace-nowrap px-6 py-2.5 bg-secondary/10 text-secondary border border-secondary/20 rounded-full font-label-md text-label-md hover:bg-secondary/20 transition-all">Island Hopping</button>
+</div>
+</section>
+<!-- Featured Destination -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-16">
+<div class="group relative overflow-hidden rounded-[2rem] bg-white border border-outline-variant/30 flex flex-col lg:flex-row shadow-lg hover:shadow-xl transition-all duration-500">
+<div class="w-full lg:w-3/5 h-[300px] lg:h-[500px] relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A breathtaking aerial view of a pristine tropical island in Halmahera Selatan with crystal-clear turquoise waters and a dense green rainforest canopy. The sunlight reflects off the gentle waves, creating a vibrant and tranquil scene. The aesthetic is high-end travel photography, featuring rich emerald and deep sea navy tones against a bright sand-colored horizon. Professional-grade wide-angle shot highlighting the raw natural beauty." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHcmQUvHB7oke-HVbREuMFk96v_CLxYXZ8z3wZVPcP0QD4iOD5PJe5gDziCaPzol8zn5MtWlkCWhptic71xHvcfT8UN-OvBvUqf3vkMkgX4tInB8l7HCRYmEHfmSITKEwFAPr7W6xsVEkW5K8-yJL1V-3o9LIUD0L0SlC-DBA6naScgxYrSxTh0HovGBfR5SsU5G7z4FtFyGckHqVE6rVsm9rfSgcFCaUKacuoTwrY12DHHy6eFv8vz8OXaUx_U3CJG8DkxmVGbNA"/>
+<div class="absolute top-6 left-6 px-4 py-2 bg-primary-container text-on-primary-container font-label-md text-label-md rounded-lg shadow-lg">
+                        FEATURED DESTINATION
+                    </div>
+</div>
+<div class="w-full lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center">
+<div class="flex items-center gap-2 text-secondary font-label-md text-label-md mb-4">
+<span class="material-symbols-outlined">star_rate</span>
+<span>4.9 (1.2k Reviews)</span>
+<span class="mx-2">•</span>
+<span>Bacan Island</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-4">The Majestic Nusara Heritage Bay</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 leading-relaxed">
+                        Experience the zenith of Halmahera’s beauty. Nusara Bay combines historical significance with untouched marine biodiversity. Explore ancient ruins by morning and dive into neon-colored coral gardens by afternoon.
+                    </p>
+<div class="flex flex-wrap gap-4 mb-8">
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-xl">
+<span class="material-symbols-outlined text-primary">scuba_diving</span>
+<span class="text-label-sm font-label-sm">Diving Spot</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-high px-4 py-2 rounded-xl">
+<span class="material-symbols-outlined text-secondary">castle</span>
+<span class="text-label-sm font-label-sm">Historic</span>
+</div>
+</div>
+<button class="w-full lg:w-fit px-10 py-4 bg-primary text-white rounded-xl font-bold hover:bg-primary/90 transition-all flex items-center justify-center gap-3">
+                        View Detailed Guide
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Destination Grid -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-20">
+<div class="flex justify-between items-end mb-10">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Browse All Destinations</h3>
+<p class="text-on-surface-variant font-body-md text-body-md">Showing 12 of 48 locations</p>
+</div>
+<div class="hidden md:flex gap-2">
+<button class="p-2 border border-outline-variant rounded-full hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="p-2 border border-outline-variant rounded-full hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">format_list_bulleted</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Grid Card Loop (12 items) -->
+<script>
+                    const cardData = [
+                        { name: "Sali Kecil Resort", cat: "Resort", loc: "Sali Island", rate: "4.8", icon: "beach_access" },
+                        { name: "Fort Barnaveld", cat: "Culture", loc: "Labuha", rate: "4.6", icon: "history_edu" },
+                        { name: "Pogo-Pogo Island", cat: "Diving", loc: "Bacan", rate: "4.9", icon: "water" },
+                        { name: "Kusu Island Reef", cat: "Nature", loc: "Kusu", rate: "4.7", icon: "eco" },
+                        { name: "Guraici Archipelago", cat: "Adventure", loc: "Kayoa", rate: "4.8", icon: "explore" },
+                        { name: "Tanjung Goro", cat: "Beach", loc: "Obi", rate: "4.5", icon: "surfing" },
+                        { name: "Mount Sibela", cat: "Trekking", loc: "Bacan", rate: "4.7", icon: "landscape" },
+                        { name: "Sawai Marine Park", cat: "Marine", loc: "North Halmahera", rate: "4.9", icon: "waves" },
+                        { name: "Widi Islands", cat: "Exotic", loc: "Gane", rate: "5.0", icon: "diamond" },
+                        { name: "Lelewi Village", cat: "Heritage", loc: "Bacan", rate: "4.4", icon: "festival" },
+                        { name: "Tawali Waterfall", cat: "Waterfall", loc: "Kasiruta", rate: "4.6", icon: "tsunami" },
+                        { name: "Pasir Putih Beach", cat: "Leisure", loc: "Makian", rate: "4.8", icon: "wb_sunny" }
+                    ];
+
+                    document.write(cardData.map(item => `
+                        <div class="group bg-white rounded-2xl border border-outline-variant/30 overflow-hidden hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                            <div class="relative h-64 overflow-hidden">
+                                <img src="placeholder" data-alt="A stunning professional photograph of ${item.name} in Halmahera Selatan. The scene features vibrant ${item.cat.toLowerCase()} scenery with crystal clear waters and golden sand. Soft tropical sunlight illuminates the landscape with warm tones. The composition is balanced and elegant, fitting a luxury travel brand aesthetic with a palette of deep greens, turquoises, and warm sunset oranges." class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                                <div class="absolute top-4 right-4 bg-white/90 glass-header px-3 py-1 rounded-full text-label-sm font-label-sm flex items-center gap-1">
+                                    <span class="material-symbols-outlined text-[16px] text-primary-container" style="font-variation-settings: 'FILL' 1;">star</span>
+                                    ${item.rate}
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="material-symbols-outlined text-[18px] text-secondary">${item.icon}</span>
+                                    <span class="text-label-sm font-label-sm text-secondary uppercase tracking-wider">${item.cat}</span>
+                                </div>
+                                <h4 class="font-headline-md text-headline-md text-on-surface mb-1 group-hover:text-primary transition-colors">${item.name}</h4>
+                                <div class="flex items-center gap-1 text-on-surface-variant font-label-sm text-label-sm mb-4">
+                                    <span class="material-symbols-outlined text-[16px]">location_on</span>
+                                    ${item.loc}
+                                </div>
+                                <p class="text-body-md text-body-md text-on-surface-variant line-clamp-2 mb-6">
+                                    Discover the serene beauty and rich biodiversity of ${item.name}, a must-visit location in the heart of the Maluku islands.
+                                </p>
+                                <div class="mt-auto pt-4 border-t border-outline-variant/20 flex justify-between items-center">
+                                    <button class="font-label-md text-label-md text-primary font-bold hover:translate-x-1 transition-transform flex items-center gap-2">
+                                        View Detail <span class="material-symbols-outlined">arrow_forward</span>
+                                    </button>
+                                    <button class="p-2 rounded-full hover:bg-error/5 text-outline hover:text-error transition-colors">
+                                        <span class="material-symbols-outlined">favorite</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    `).join(''));
+                </script>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex justify-center items-center gap-2">
+<button class="w-12 h-12 rounded-xl border border-outline-variant flex items-center justify-center hover:bg-primary/5 transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-xl bg-primary text-white font-bold">1</button>
+<button class="w-12 h-12 rounded-xl border border-outline-variant font-bold hover:bg-primary/5 transition-colors">2</button>
+<button class="w-12 h-12 rounded-xl border border-outline-variant font-bold hover:bg-primary/5 transition-colors">3</button>
+<span class="px-2 text-outline">...</span>
+<button class="w-12 h-12 rounded-xl border border-outline-variant font-bold hover:bg-primary/5 transition-colors">8</button>
+<button class="w-12 h-12 rounded-xl border border-outline-variant flex items-center justify-center hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</section>
+<!-- Newsletter Section -->
+<section class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mt-24">
+<div class="bg-secondary p-8 md:p-16 rounded-[2.5rem] relative overflow-hidden shadow-2xl">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-20 pointer-events-none">
+
+</div>
+<div class="relative z-10 max-w-2xl text-white">
+<h2 class="font-headline-xl text-headline-xl mb-4 leading-tight">Get the Halsea Insider</h2>
+<p class="font-body-lg text-body-lg text-white/80 mb-8">
+                        Join 5,000+ travelers. Receive exclusive travel guides, hidden destination alerts, and special accommodation offers directly in your inbox.
+                    </p>
+<form class="flex flex-col sm:flex-row gap-4">
+<input class="flex-grow px-6 py-4 rounded-xl bg-white/10 border border-white/20 text-white placeholder:text-white/60 focus:ring-2 focus:ring-white/40 font-body-md" placeholder="Your email address" type="email"/>
+<button class="px-10 py-4 bg-primary-container text-on-primary-container font-bold rounded-xl hover:scale-105 transition-transform">Subscribe Now</button>
+</form>
+<p class="mt-4 text-sm text-white/50">By subscribing, you agree to our Privacy Policy and Terms of Service.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl bg-surface-container-highest border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-20 max-w-container-max mx-auto">
+<div class="flex flex-col gap-6">
+<a class="text-headline-lg font-headline-lg text-primary font-bold tracking-tighter" href="#">HALSEA</a>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                    Your premium gateway to the unexplored wonders of South Halmahera. Experience the raw beauty of the Moluccas with luxury and ease.
+                </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">share</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined text-[20px]">public</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Quick Links</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">About Us</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Contact Support</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Privacy Policy</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Destinations</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Bacan Island</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Obi Archipelago</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Makian &amp; Kayoa</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Gane Coast</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-headline-md text-primary mb-6">Support</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">FAQ</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Travel Packages</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Booking Guide</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Newsletter</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-outline-variant/30 py-8 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center">
+<p class="font-body-md text-body-md text-on-surface-variant/60">
+                © 2024 HALSEA (Halmahera Selatan). All Rights Reserved. Explore the Land of Kings.
+            </p>
+</div>
+</footer>
+<script>
+        // Micro-interactions and subtle effects
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Potential for dynamic JS-based micro-interactions
+            });
+        });
+
+        // Filter button toggle state simulation
+        const categoryChips = document.querySelectorAll('.flex.gap-3 button');
+        categoryChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                categoryChips.forEach(c => {
+                    c.classList.remove('bg-primary', 'text-white');
+                    c.classList.add('bg-secondary/10', 'text-secondary', 'border-secondary/20');
+                });
+                chip.classList.remove('bg-secondary/10', 'text-secondary', 'border-secondary/20');
+                chip.classList.add('bg-primary', 'text-white');
+            });
+        });
+    </script>
+</body></html>
